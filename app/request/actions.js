@@ -47,6 +47,7 @@ export async function createRequest(formData) {
 
     return { success: true, need: newNeed };
   } catch (error) {
+    console.error(error);
     return {
       errors: { message: "Failed to create the request. Please try again." },
     };
