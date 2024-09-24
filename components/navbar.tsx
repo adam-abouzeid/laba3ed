@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="flex gap-4">
         <Link href="/">Requests</Link>
 
-        <Link href="/request">Recieve</Link>
+        <Link href="/request">Receive</Link>
       </div>
     </div>
   );

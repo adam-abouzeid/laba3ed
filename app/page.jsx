@@ -26,6 +26,7 @@ const DonatePage = async ({ searchParams }) => {
     where: selectedCategory !== "ALL" ? { category: selectedCategory } : {},
     skip,
     take: ITEMS_PER_PAGE,
+    orderBy: { createdAt: "desc" },
   });
 
   // Get the total count of requests to calculate the total number of pages
