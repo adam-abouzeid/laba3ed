@@ -25,6 +25,7 @@ model Need {
   title     String
   description String
   category  Category
+  area      String @default("Lebanon")
   contact   String
   createdAt DateTime @default(now())
 }

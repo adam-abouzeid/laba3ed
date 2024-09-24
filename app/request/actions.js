@@ -16,6 +16,7 @@ const schema = z.object({
     "MEDICINE",
     "OTHER",
   ]),
+  area: z.string(),
 });
 
 export async function createRequest(formData) {
@@ -25,6 +26,7 @@ export async function createRequest(formData) {
     description: formData.get("description"),
     contact: formData.get("contact"),
     category: formData.get("category"),
+    area: formData.get("area"),
   });
 
   // If validation fails, return an error
@@ -42,6 +44,7 @@ export async function createRequest(formData) {
         description: validatedFields.data.description,
         category: validatedFields.data.category,
         contact: validatedFields.data.contact,
+        area: validatedFields.data.area,
       },
     });
 

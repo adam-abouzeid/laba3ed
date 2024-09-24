@@ -83,9 +83,12 @@ const DonatePage = async ({ searchParams }) => {
               <p className="text-gray-600">{request.description}</p>
               <p className="text-gray-600">+961 {request.contact}</p>
 
-              <div className="mt-4">
+              <div className="mt-4 gap-2 flex">
                 <span className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full">
                   {request.category}
+                </span>
+                <span className="inline-block bg-blue-100 text-green-600 text-sm font-medium px-3 py-1 rounded-full">
+                  {request.area}
                 </span>
               </div>
             </div>

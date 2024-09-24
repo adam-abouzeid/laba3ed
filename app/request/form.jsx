@@ -90,7 +90,20 @@ const RecievePage = () => {
             />
           </div>
         </div>
-
+        <div>
+          <label
+            htmlFor="area"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Area:
+          </label>
+          <input
+            name="area"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            placeholder="Your area/location"
+            required
+          />
+        </div>
         <div>
           <label
             htmlFor="category"
