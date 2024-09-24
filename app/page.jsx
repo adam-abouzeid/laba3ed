@@ -1,5 +1,4 @@
 import db from "@/lib/db";
-
 // Available categories
 const categories = [
   "ALL",
@@ -81,7 +80,7 @@ const DonatePage = async ({ searchParams }) => {
             >
               <h2 className="text-xl font-semibold mb-2">{request.title}</h2>
               <p className="text-gray-600">{request.description}</p>
-              <p className="text-gray-600">{request.contact}</p>
+              <p className="text-gray-600">+961 {request.contact}</p>
 
               <div className="mt-4">
                 <span className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full">

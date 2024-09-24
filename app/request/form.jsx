@@ -68,6 +68,7 @@ const RecievePage = () => {
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Describe the need"
             required
+            maxLength={150}
           />
         </div>
 
@@ -81,7 +82,7 @@ const RecievePage = () => {
           <div className="flex gap-1 items-center">
             <p>+961</p>
             <input
-              type="text"
+              type="number"
               name="contact"
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               placeholder="Your contact number e.g. 11 11 11 11"

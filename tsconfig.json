@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/request-form.jsx"
+    "components/request-form.jsx",
+    "lib/db.js"
   ],
   "exclude": ["node_modules"]
 }
