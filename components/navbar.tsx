@@ -1,18 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 const Navbar = () => {
   return (
-    <div className="flex  justify-around bg-red-400 h-[100px] items-center">
+    <div className="flex  justify-around bg-[#dfdddd] h-[100px] items-center">
       <Image
-        src="/images/image.png"
+        src="/images/logo.jpeg"
         width={100}
         height={100}
         alt="Lebanese Flag"
       />
       <div className="flex gap-4">
-        <Link href="/">Requests</Link>
+        <Link href="/">
+          <Button>Requests</Button>
+        </Link>
 
-        <Link href="/request">Receive</Link>
+        <Link href="/request">
+          <Button variant={"outline"}>Receive</Button>
+        </Link>
       </div>
     </div>
   );
