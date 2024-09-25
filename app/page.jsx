@@ -9,11 +9,12 @@ const categories = [
   "MEDICINE",
   "OTHER",
 ];
-
+import { getTranslations } from "next-intl/server";
 // Number of items per page
 const ITEMS_PER_PAGE = 6;
 
 const DonatePage = async ({ searchParams }) => {
+  const t = await getTranslations("RequestsPage");
   // Get the selected category and pagination details from the query parameters
   const selectedCategory = searchParams?.category || "ALL";
   const page = parseInt(searchParams?.page || "1", 10);
@@ -38,16 +39,14 @@ const DonatePage = async ({ searchParams }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-8">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        See What People Need & Filter by Category
-      </h1>
+      <h1 className="text-3xl font-bold text-center mb-8">{t("heading")}</h1>
 
       <div className="mb-6">
         <label
           htmlFor="category"
           className="block text-sm font-medium text-gray-700"
         >
-          Filter by Category:
+          {t("filter")}
         </label>
         {/* Form to select category and submit */}
         <form action="/" method="GET">
@@ -59,7 +58,7 @@ const DonatePage = async ({ searchParams }) => {
           >
             {categories.map((category) => (
               <option key={category} value={category}>
-                {category.charAt(0) + category.slice(1).toLowerCase()}
+                {t(category.charAt(0) + category.slice(1).toLowerCase())}
               </option>
             ))}
           </select>
@@ -67,7 +66,7 @@ const DonatePage = async ({ searchParams }) => {
             type="submit"
             className="mt-4 w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
-            Filter
+            {t("filter-button")}
           </button>
         </form>
       </div>
@@ -94,9 +93,7 @@ const DonatePage = async ({ searchParams }) => {
             </div>
           ))
         ) : (
-          <p className="text-center text-gray-500">
-            No requests found for this category.
-          </p>
+          <p className="text-center text-gray-500">{t("None")}</p>
         )}
       </div>
 

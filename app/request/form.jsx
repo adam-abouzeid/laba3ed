@@ -3,8 +3,9 @@
 import { useState, useTransition } from "react";
 import { toast } from "sonner"; // Import toast notification
 import { createRequest } from "./actions"; // Import your server action
-
+import { useTranslations } from "next-intl";
 const RecievePage = () => {
+  const t = useTranslations("ReceivePage");
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState();
 
@@ -35,7 +36,7 @@ const RecievePage = () => {
   return (
     <div className="max-w-md mx-auto p-8 bg-white shadow-md rounded-lg">
       <h1 className="text-2xl font-semibold mb-6 text-center">
-        Need something? We got your back, make a request!
+        {t("heading")}
       </h1>
 
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
@@ -46,12 +47,12 @@ const RecievePage = () => {
             htmlFor="title"
             className="block text-sm font-medium text-gray-700"
           >
-            Title:
+            {t("title")}
           </label>
           <input
             name="title"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder="Title for the need"
+            placeholder={t("title-placeholder")}
             required
           />
         </div>
@@ -61,12 +62,12 @@ const RecievePage = () => {
             htmlFor="description"
             className="block text-sm font-medium text-gray-700"
           >
-            Description:
+            {t("description")}
           </label>
           <textarea
             name="description"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder="Describe the need"
+            placeholder={t("description-placeholder")}
             required
             maxLength={150}
           />
@@ -77,7 +78,7 @@ const RecievePage = () => {
             htmlFor="contact"
             className="block text-sm font-medium text-gray-700"
           >
-            Contact:
+            {t("contact")}
           </label>
           <div className="flex gap-1 items-center">
             <p>+961</p>
@@ -85,7 +86,7 @@ const RecievePage = () => {
               type="number"
               name="contact"
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              placeholder="Your contact number e.g. 11 11 11 11"
+              placeholder={t("contact-placeholder")}
               required
             />
           </div>
@@ -95,12 +96,12 @@ const RecievePage = () => {
             htmlFor="area"
             className="block text-sm font-medium text-gray-700"
           >
-            Area:
+            {t("area")}
           </label>
           <input
             name="area"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder="Your area/location"
+            placeholder={t("area-placeholder")}
             required
           />
         </div>
@@ -109,19 +110,19 @@ const RecievePage = () => {
             htmlFor="category"
             className="block text-sm font-medium text-gray-700"
           >
-            Category:
+            {t("category")}
           </label>
           <select
             name="category"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             required
           >
-            <option value="FOOD">Food</option>
-            <option value="CLOTHING">Clothing</option>
-            <option value="SHELTER">Shelter</option>
-            <option value="TRANSPORTATION">Transportation</option>
-            <option value="MEDICINE">Medicine</option>
-            <option value="OTHER">Other</option>
+            <option value="FOOD">{t("Food")}</option>
+            <option value="CLOTHING">{t("Clothing")}</option>
+            <option value="SHELTER">{t("Shelter")}</option>
+            <option value="TRANSPORTATION">{t("Transportation")}</option>
+            <option value="MEDICINE">{t("Medicine")}</option>
+            <option value="OTHER">{t("Other")}</option>
           </select>
         </div>
 
@@ -132,7 +133,7 @@ const RecievePage = () => {
             isPending && "opacity-50 cursor-not-allowed"
           }`}
         >
-          {isPending ? "Submitting..." : "Create Request"}
+          {isPending ? "Submitting..." : t("submit")}
         </button>
       </form>
     </div>

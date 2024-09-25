@@ -1,0 +1,41 @@
+{
+  "RequestsPage": {
+    "heading": "شاهد ما يحتاجه الناس وقم بالتصفية حسب الفئة",
+    "filter": "تصفية حسب الفئة",
+    "filter-button": "تصفية",
+
+    "Food": "طعام",
+    "Clothing": "ملابس",
+    "Shelter": "مأوى",
+    "Medicine": "دواء",
+    "Transportation": "نقل",
+    "All": "الكل",
+    "Other": "أخرى",
+    "None": "لا شيء"
+  },
+  "Navbar": {
+    "Requests": "الطلبات",
+    "Receive": "اطلب"
+  },
+  "ReceivePage": {
+    "heading": ".محتاج شي؟ اعرض طلبك هنا",
+    "title": "العنوان",
+    "title-placeholder": "عنوان الطلب",
+    "description": "الوصف",
+    "description-placeholder": "وصف الطلب",
+    "category": "الفئة",
+    "area": "المنطقة",
+    "area-placeholder": "المنطقة",
+    "submit": "إرسال",
+    "contact": "التواصل",
+    "contact-placeholder": "رقم الهاتف e.g. 12 34 56 70",
+    "Food": "طعام",
+    "Clothing": "ملابس",
+    "Shelter": "مأوى",
+    "Medicine": "دواء",
+    "Transportation": "نقل",
+    "All": "الكل",
+    "Other": "أخرى",
+    "None": "لا شيء"
+  }
+}

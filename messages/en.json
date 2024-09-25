@@ -1,0 +1,41 @@
+{
+  "RequestsPage": {
+    "heading": "See what people need & filter by category",
+    "filter": "Filter by category",
+    "filter-button": "Filter",
+
+    "Food": "Food",
+    "Clothing": "Clothing",
+    "Shelter": "Shelter",
+    "Medicine": "Medicine",
+    "Transportation": "Transportation",
+    "All": "All",
+    "Other": "Other",
+    "None": "None"
+  },
+  "Navbar": {
+    "Requests": "Requests",
+    "Receive": "Receive"
+  },
+  "ReceivePage": {
+    "heading": "Need something? Post your request here.",
+    "title": "Title",
+    "title-placeholder": "Request title",
+    "description": "Description",
+    "description-placeholder": "Describe the request",
+    "category": "Category",
+    "area": "Area",
+    "area-placeholder": "Area",
+    "submit": "Submit",
+    "contact": "Contact",
+    "contact-placeholder": "Phone number e.g. 12 34 56 70",
+    "Food": "Food",
+    "Clothing": "Clothing",
+    "Shelter": "Shelter",
+    "Medicine": "Medicine",
+    "Transportation": "Transportation",
+    "All": "All",
+    "Other": "Other",
+    "None": "None"
+  }
+}
