@@ -35,8 +35,6 @@ export async function createRequest(formData) {
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }
-  console.log(validatedFields.data);
-  // Insert data into the database
   try {
     const newNeed = await db.need.create({
       data: {

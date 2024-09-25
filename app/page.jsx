@@ -1,5 +1,9 @@
 import db from "@/lib/db";
-// Available categories
+
+export const metadata = {
+  title: "Requests",
+  description: "See all the requests for help",
+};
 const categories = [
   "ALL",
   "FOOD",
@@ -15,9 +19,22 @@ const ITEMS_PER_PAGE = 6;
 
 const DonatePage = async ({ searchParams }) => {
   const t = await getTranslations("RequestsPage");
-  // Get the selected category and pagination details from the query parameters
-  const selectedCategory = searchParams?.category || "ALL";
-  const page = parseInt(searchParams?.page || "1", 10);
+  let page = parseInt(searchParams?.page || "1", 10);
+
+  const selectedCategory = categories.includes(searchParams?.category)
+    ? searchParams.category
+    : "ALL";
+  const totalRequests = await db.need.count({
+    where: selectedCategory !== "ALL" ? { category: selectedCategory } : {},
+  });
+  const totalPages = Math.ceil(totalRequests / ITEMS_PER_PAGE);
+
+  // Validate the page number: it should be at least 1 and at most totalPages
+  if (isNaN(page) || page < 1) {
+    page = 1; // Default to the first page if the page number is invalid or too low
+  } else if (page > totalPages) {
+    page = totalPages; // Default to the last page if the page number exceeds total pages
+  }
 
   // Calculate the number of items to skip based on the current page
   const skip = (page - 1) * ITEMS_PER_PAGE;
@@ -31,11 +48,6 @@ const DonatePage = async ({ searchParams }) => {
   });
 
   // Get the total count of requests to calculate the total number of pages
-  const totalRequests = await db.need.count({
-    where: selectedCategory !== "ALL" ? { category: selectedCategory } : {},
-  });
-
-  const totalPages = Math.ceil(totalRequests / ITEMS_PER_PAGE);
 
   return (
     <div className="max-w-4xl mx-auto p-8">
