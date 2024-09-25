@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/footer";
+import { getLocale, getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,20 +23,24 @@ export const metadata: Metadata = {
     "App created so people can help each other during these tough times",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <Toaster />
-        {children}
-        <Footer />
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          <Toaster />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
