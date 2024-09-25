@@ -102,7 +102,7 @@ const Navbar = () => {
               {t("Receive")}
             </Button>
           </Link>
-          <Link href="/request" onClick={toggleMenu}>
+          <Link href="/about" onClick={toggleMenu}>
             <Button className="w-full" variant={"outline"}>
               {t("About")}
             </Button>
