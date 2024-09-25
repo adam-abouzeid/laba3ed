@@ -116,7 +116,11 @@ const RecievePage = () => {
             name="category"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             required
+            defaultValue="" // Initial value is an empty string, which will not be valid for the form submission
           >
+            <option value="" disabled>
+              {t("Select a category")}
+            </option>
             <option value="FOOD">{t("Food")}</option>
             <option value="CLOTHING">{t("Clothing")}</option>
             <option value="SHELTER">{t("Shelter")}</option>

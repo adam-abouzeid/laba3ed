@@ -37,7 +37,8 @@
     "Transportation": "Transportation",
     "All": "All",
     "Other": "Other",
-    "None": "None"
+    "None": "None",
+    "Select a category": "Select a category"
   },
   "AboutUsPage": {
     "heroTitle": "About Us",
