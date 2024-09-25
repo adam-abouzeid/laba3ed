@@ -3,13 +3,7 @@ import { useRouter } from "next/navigation";
 
 // Error boundaries must be Client Components
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function GlobalError() {
   const router = useRouter();
   return (
     // global-error must include html and body tags
