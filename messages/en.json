@@ -51,5 +51,17 @@
     "donateTitle": "Support Us with Financial Donations",
     "donateDescription": "You can support our mission by making a direct money donation to our Wish Money account. Your contributions will help us continue providing essential services and purchase goods that will be distributed to those in need. Every donation counts, no matter the size.",
     "donateButton": "Donate Now +961 81 997 027"
+  },
+  "RequestCard": {
+    "reportTitle": "Report Request",
+    "reportDescription": "Report a request and select a reason. Submit when you are done.",
+    "selectReasonPlaceholder": "Select a Reason",
+    "reasons": {
+      "title": "Reasons",
+      "fulfilledByLister": "I contacted the lister and the request has been fulfilled.",
+      "spamScam": "I think the request is a form of spam/scam.",
+      "fulfilledByOwner": "I am the owner of the request and the request has been fulfilled."
+    },
+    "submitReport": "Submit Report"
   }
 }

@@ -28,6 +28,7 @@ model Need {
   category  Category
   area      String @default("Lebanon")
   contact   String
+  reports   Report[]  @relation("NeedReports")
   createdAt DateTime @default(now())
 }
 
@@ -38,4 +39,11 @@ model Offering {
   category  Category
   contact   String
   createdAt DateTime @default(now())
+}
+model Report {
+  id        Int      @id @default(autoincrement())
+  reason   String
+  needId Int
+  createdAt DateTime @default(now())
+  need      Need     @relation("NeedReports", fields: [needId], references: [id])
 }
