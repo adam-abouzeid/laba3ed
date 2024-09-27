@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-[#dfdddd] fixed top-0 left-0 w-full z-50 shadow-md">
+      <nav className="bg-[#dfdddd] top-0 left-0 w-full z-50 shadow-md">
         <div className="flex justify-between items-center px-4 h-[100px]">
           {/* Logo */}
           <Image
@@ -92,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Menu, visible only when toggled */}
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col gap-4 p-4 bg-[#dfdddd] shadow-md mt-[100px]">
+        <div className="lg:hidden flex flex-col gap-4 p-4 bg-[#dfdddd] shadow-md ">
           <Link href="/" onClick={toggleMenu}>
             <Button className="w-full">{t("Requests")}</Button>
           </Link>
@@ -121,10 +121,6 @@ const Navbar = () => {
       )}
 
       {/* Content container - ensure it is pushed down when menu is open */}
-      <div className={`${!isMenuOpen ? "mt-[100px]" : ""}`}>
-        {/* Main content goes here */}
-        {/* The mt-[200px] ensures there's enough space below the menu when it's open */}
-      </div>
     </>
   );
 };
