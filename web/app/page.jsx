@@ -79,7 +79,7 @@ const DonatePage = async ({ searchParams }) => {
             type="submit"
             className="mt-4 w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
-            {t("filter-button")}
+            {t("filterButton")}
           </button>
         </form>
       </div>
@@ -90,7 +90,7 @@ const DonatePage = async ({ searchParams }) => {
             <RequestCard key={request.id} request={request} />
           ))
         ) : (
-          <p className="text-center text-gray-500">{t("None")}</p>
+          <p className="text-center text-gray-500">{t("none")}</p>
         )}
       </div>
 

@@ -52,7 +52,7 @@ const RecievePage = () => {
           <input
             name="title"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder={t("title-placeholder")}
+            placeholder={t("titlePlaceholder")}
             required
           />
         </div>
@@ -67,7 +67,7 @@ const RecievePage = () => {
           <textarea
             name="description"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder={t("description-placeholder")}
+            placeholder={t("descriptionPlaceholder")}
             required
             maxLength={150}
           />
@@ -86,7 +86,7 @@ const RecievePage = () => {
               type="number"
               name="contact"
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              placeholder={t("contact-placeholder")}
+              placeholder={t("contactPlaceholder")}
               required
             />
           </div>
@@ -101,7 +101,7 @@ const RecievePage = () => {
           <input
             name="area"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder={t("area-placeholder")}
+            placeholder={t("areaPlaceholder")}
             required
           />
         </div>
@@ -119,14 +119,14 @@ const RecievePage = () => {
             defaultValue="" // Initial value is an empty string, which will not be valid for the form submission
           >
             <option value="" disabled>
-              {t("Select a category")}
+              {t("selectCategory")}
             </option>
-            <option value="FOOD">{t("Food")}</option>
-            <option value="CLOTHING">{t("Clothing")}</option>
-            <option value="SHELTER">{t("Shelter")}</option>
-            <option value="TRANSPORTATION">{t("Transportation")}</option>
-            <option value="MEDICINE">{t("Medicine")}</option>
-            <option value="OTHER">{t("Other")}</option>
+            <option value="FOOD">{t("food")}</option>
+            <option value="CLOTHING">{t("clothing")}</option>
+            <option value="SHELTER">{t("shelter")}</option>
+            <option value="TRANSPORTATION">{t("transportation")}</option>
+            <option value="MEDICINE">{t("medicine")}</option>
+            <option value="OTHER">{t("other")}</option>
           </select>
         </div>
 

@@ -1,46 +1,45 @@
 {
-  "RequestsPage": {
+  "requestsPage": {
     "heading": "شاهد ما يحتاجه الناس وقم بالتصفية حسب الفئة",
     "filter": "تصفية حسب الفئة",
-    "filter-button": "تصفية",
-
-    "Food": "طعام",
-    "Clothing": "ملابس",
-    "Shelter": "مأوى",
-    "Medicine": "دواء",
-    "Transportation": "نقل",
-    "All": "الكل",
-    "Other": "أخرى",
-    "None": "لا شيء"
+    "filterButton": "تصفية",
+    "food": "طعام",
+    "clothing": "ملابس",
+    "shelter": "مأوى",
+    "medicine": "دواء",
+    "transportation": "نقل",
+    "all": "الكل",
+    "other": "أخرى",
+    "none": "لا شيء"
   },
-  "Navbar": {
-    "Requests": "الطلبات",
-    "Receive": "اطلب",
-    "About": "معلومات عنا"
+  "navbar": {
+    "requests": "الطلبات",
+    "receive": "اطلب",
+    "about": "معلومات عنا"
   },
-  "ReceivePage": {
+  "receivePage": {
     "heading": ".محتاج شي؟ اعرض طلبك هنا",
     "title": "العنوان",
-    "title-placeholder": "عنوان الطلب",
+    "titlePlaceholder": "عنوان الطلب",
     "description": "الوصف",
-    "description-placeholder": "وصف الطلب",
+    "descriptionPlaceholder": "وصف الطلب",
     "category": "الفئة",
     "area": "المنطقة",
-    "area-placeholder": "المنطقة",
+    "areaPlaceholder": "المنطقة",
     "submit": "إرسال",
     "contact": "التواصل",
-    "contact-placeholder": "رقم الهاتف e.g. 12 34 56 70",
-    "Food": "طعام",
-    "Clothing": "ملابس",
-    "Shelter": "مأوى",
-    "Medicine": "دواء",
-    "Transportation": "نقل",
-    "All": "الكل",
-    "Other": "أخرى",
-    "None": "لا شيء",
-    "Select a category": "اختر الفئة"
+    "contactPlaceholder": "رقم الهاتف e.g. 12 34 56 70",
+    "food": "طعام",
+    "clothing": "ملابس",
+    "shelter": "مأوى",
+    "medicine": "دواء",
+    "transportation": "نقل",
+    "all": "الكل",
+    "other": "أخرى",
+    "none": "لا شيء",
+    "selectCategory": "اختر الفئة"
   },
-  "AboutUsPage": {
+  "aboutUsPage": {
     "heroTitle": "من نحن",
     "heroSubtitle": "مهمتنا هي مساعدة المحتاجين.",
     "whatWeDoTitle": "ماذا نفعل",
@@ -52,7 +51,7 @@
     "donateDescription": "يمكنك دعم مهمتنا من خلال تقديم تبرع مالي مباشر إلى حساب Wish Money الخاص بنا. ستساعد مساهماتك في مواصلة تقديم الخدمات الأساسية وشراء السلع التي سيتم توزيعها على المحتاجين. كل تبرع مهم، مهما كان حجمه.",
     "donateButton": "+تبرع الآن961 81 997 027"
   },
-  "RequestCard": {
+  "requestCard": {
     "reportTitle": "الإبلاغ عن الطلب",
     "reportDescription": "أبلغ عن طلب واختر السبب. قم بالتقديم عند الانتهاء.",
     "selectReasonPlaceholder": "اختر سببًا",

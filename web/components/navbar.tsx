@@ -67,14 +67,14 @@ const Navbar = () => {
           {/* Links for desktop, hidden on mobile */}
           <div className="hidden lg:flex gap-4 items-center">
             <Link href="/">
-              <Button>{t("Requests")}</Button>
+              <Button>{t("requests")}</Button>
             </Link>
 
             <Link href="/request">
-              <Button variant={"outline"}>{t("Receive")}</Button>
+              <Button variant={"outline"}>{t("receive")}</Button>
             </Link>
             <Link href="/about">
-              <Button variant={"outline"}>{t("About")}</Button>
+              <Button variant={"outline"}>{t("about")}</Button>
             </Link>
 
             {/* Language Dropdown */}
@@ -94,17 +94,17 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col gap-4 p-4 bg-[#dfdddd] shadow-md ">
           <Link href="/" onClick={toggleMenu}>
-            <Button className="w-full">{t("Requests")}</Button>
+            <Button className="w-full">{t("requests")}</Button>
           </Link>
 
           <Link href="/request" onClick={toggleMenu}>
             <Button className="w-full" variant={"outline"}>
-              {t("Receive")}
+              {t("receive")}
             </Button>
           </Link>
           <Link href="/about" onClick={toggleMenu}>
             <Button className="w-full" variant={"outline"}>
-              {t("About")}
+              {t("about")}
             </Button>
           </Link>
 
