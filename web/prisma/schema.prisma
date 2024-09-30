@@ -11,8 +11,8 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
+
 enum Category {
   FOOD
   CLOTHING
@@ -21,29 +21,31 @@ enum Category {
   MEDICINE
   OTHER
 }
+
 model Need {
-  id        Int      @id @default(autoincrement())
-  title     String
+  id          Int      @id @default(autoincrement())
+  title       String
   description String
-  category  Category
-  area      String @default("Lebanon")
-  contact   String
-  reports   Report[]  @relation("NeedReports")
-  createdAt DateTime @default(now())
+  category    Category
+  area        String   @default("Lebanon")
+  contact     String
+  reports     Report[] @relation("NeedReports")
+  createdAt   DateTime @default(now())
 }
 
 model Offering {
-  id        Int      @id @default(autoincrement())
-  title     String
+  id          Int      @id @default(autoincrement())
+  title       String
   description String
-  category  Category
-  contact   String
-  createdAt DateTime @default(now())
+  category    Category
+  contact     String
+  createdAt   DateTime @default(now())
 }
+
 model Report {
   id        Int      @id @default(autoincrement())
-  reason   String
-  needId Int
+  reason    String
+  needId    Int
   createdAt DateTime @default(now())
   need      Need     @relation("NeedReports", fields: [needId], references: [id], onDelete: Cascade)
 }
