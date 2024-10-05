@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
 import { HiMenu, HiX } from "react-icons/hi"; // Importing icons for the menu toggle
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   // State to keep track of selected language
@@ -39,16 +41,18 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const pathname = usePathname();
+
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-[#dfdddd] top-0 left-0 w-full z-50 shadow-md">
-        <div className="flex justify-between items-center px-4 h-[100px]">
+      <nav className="bg-[#dfdddd] top-0 left-0 w-full z-50 shadow-sm">
+        <div className="flex justify-between items-center px-4 h-[64px]">
           {/* Logo */}
           <Image
             src="/images/logo.jpeg"
-            width={100}
-            height={100}
+            width={64}
+            height={64}
             alt="Lebanese Flag"
             className="cursor-pointer"
           />
@@ -67,11 +71,29 @@ const Navbar = () => {
           {/* Links for desktop, hidden on mobile */}
           <div className="hidden lg:flex gap-4 items-center">
             <Link href="/">
-              <Button>{t("requests")}</Button>
+              <Button
+                className={cn(
+                  "w-full",
+                  pathname === "/" ? "text-primary" : "text-muted-foreground"
+                )}
+                variant={"link"}
+              >
+                {t("requests")}
+              </Button>
             </Link>
 
             <Link href="/about">
-              <Button variant={"outline"}>{t("about")}</Button>
+              <Button
+                className={cn(
+                  "w-full",
+                  pathname === "/about"
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+                variant={"link"}
+              >
+                {t("about")}
+              </Button>
             </Link>
 
             {/* Language Dropdown */}
@@ -91,16 +113,24 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col gap-4 p-4 bg-[#dfdddd] shadow-md ">
           <Link href="/" onClick={toggleMenu}>
-            <Button className="w-full">{t("requests")}</Button>
-          </Link>
-
-          <Link href="/request" onClick={toggleMenu}>
-            <Button className="w-full" variant={"outline"}>
-              {t("receive")}
+            <Button
+              className={cn(
+                "w-full",
+                pathname === "/" ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {t("requests")}
             </Button>
           </Link>
+
           <Link href="/about" onClick={toggleMenu}>
-            <Button className="w-full" variant={"outline"}>
+            <Button
+              className={cn(
+                "w-full",
+                pathname === "/about" ? "text-primary" : "text-muted-foreground"
+              )}
+              variant={"outline"}
+            >
               {t("about")}
             </Button>
           </Link>

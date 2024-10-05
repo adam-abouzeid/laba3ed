@@ -29,11 +29,13 @@ export default async function RootLayout({
       lang={locale}
       className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
     >
-      <body>
+      <body className="flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <Toaster />
-          {children}
+          <div className="max-w-2xl py-6 px-4 md:px-0 mx-auto container">
+            {children}
+          </div>
           <Footer />
         </NextIntlClientProvider>
       </body>

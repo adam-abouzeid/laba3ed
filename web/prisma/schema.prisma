@@ -24,7 +24,6 @@ enum Category {
 
 model Need {
   id          Int      @id @default(autoincrement())
-  title       String
   description String
   category    Category
   area        String   @default("Lebanon")

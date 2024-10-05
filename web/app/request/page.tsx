@@ -4,9 +4,13 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner"; // Import toast notification
 import { createRequest } from "./actions"; // Import your server action
 import { useTranslations } from "next-intl";
+import { Category } from "@prisma/client";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { GoAlert } from "react-icons/go";
+import { Input } from "@/components/ui/input";
 
 const ReceivePage = () => {
-  const t = useTranslations("receivePage");
+  const t = useTranslations("makeRequestPage");
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string>();
 
@@ -44,19 +48,28 @@ const ReceivePage = () => {
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
+        <div className="space-y-1.5">
           <label
-            htmlFor="title"
+            htmlFor="category"
             className="block text-sm font-medium text-gray-700"
           >
-            {t("title")}
+            {t("requestType")}
           </label>
-          <input
-            name="title"
+          <select
+            name="category"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder={t("titlePlaceholder")}
             required
-          />
+            defaultValue="" // Initial value is an empty string, which will not be valid for the form submission
+          >
+            <option value="" disabled>
+              {t("selectRequestType")}
+            </option>
+            {Object.values(Category).map((category) => (
+              <option key={category} value={category}>
+                {t(category.toLowerCase())}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div>
@@ -75,62 +88,40 @@ const ReceivePage = () => {
           />
         </div>
 
-        <div>
+        <div className="space-y-1.5">
           <label
-            htmlFor="contact"
+            htmlFor="area"
+            className="block text-sm font-medium text-gray-700"
+          >
+            {t("location")}
+          </label>
+          <Input name="area" placeholder={t("locationPlaceholder")} required />
+        </div>
+
+        <div className="space-y-1.5">
+          <label
+            htmlFor=" "
             className="block text-sm font-medium text-gray-700"
           >
             {t("contact")}
           </label>
-          <div className="flex gap-1 items-center">
-            <p>+961</p>
+          <div className="flex focus-within:ring-2 focus-within:ring-blue-500 border border-gray-300 rounded-md shadow-sm items-baseline">
+            <span className="sm:text-sm pl-2">+961</span>
             <input
-              type="number"
               name="contact"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="block w-full bg-transparent p-2 sm:text-sm outline-none"
               placeholder={t("contactPlaceholder")}
               required
             />
           </div>
         </div>
-        <div>
-          <label
-            htmlFor="area"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("area")}
-          </label>
-          <input
-            name="area"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            placeholder={t("areaPlaceholder")}
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("category")}
-          </label>
-          <select
-            name="category"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            required
-            defaultValue="" // Initial value is an empty string, which will not be valid for the form submission
-          >
-            <option value="" disabled>
-              {t("selectCategory")}
-            </option>
-            <option value="FOOD">{t("food")}</option>
-            <option value="CLOTHING">{t("clothing")}</option>
-            <option value="SHELTER">{t("shelter")}</option>
-            <option value="TRANSPORTATION">{t("transportation")}</option>
-            <option value="MEDICINE">{t("medicine")}</option>
-            <option value="OTHER">{t("other")}</option>
-          </select>
-        </div>
+
+        <Alert>
+          <GoAlert className="h-4 w-4" />
+          <AlertDescription className="leading-7">
+            {t("disclaimer")}
+          </AlertDescription>
+        </Alert>
 
         <button
           type="submit"

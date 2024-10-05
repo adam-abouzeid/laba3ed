@@ -12,20 +12,19 @@
     "other": "أخرى",
     "none": "لا شيء"
   },
-  "receive": "اطلب",
   "navbar": {
     "requests": "الطلبات",
     "about": "معلومات عنا"
   },
-  "receivePage": {
+  "makeRequestPage": {
     "heading": ".محتاج شي؟ اعرض طلبك هنا",
     "title": "العنوان",
     "titlePlaceholder": "عنوان الطلب",
     "description": "الوصف",
     "descriptionPlaceholder": "وصف الطلب",
     "category": "الفئة",
-    "area": "المنطقة",
-    "areaPlaceholder": "المنطقة",
+    "location": "المنطقة",
+    "locationPlaceholder": "المنطقة",
     "submit": "إرسال",
     "contact": "التواصل",
     "contactPlaceholder": "رقم الهاتف e.g. 12 34 56 70",
@@ -37,7 +36,9 @@
     "all": "الكل",
     "other": "أخرى",
     "none": "لا شيء",
-    "selectCategory": "اختر الفئة"
+    "requestType": "نوع الطلب",
+    "selectRequestType": "اختر نوع الطلب",
+    "disclaimer": "يرجى عدم تقديم أي معلومات تعريف شخصية تتجاوز ما هو ضروري للغاية لطلبك."
   },
   "aboutUsPage": {
     "heroTitle": "من نحن",

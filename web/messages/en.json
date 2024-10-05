@@ -12,23 +12,22 @@
     "other": "Other",
     "none": "None"
   },
-  "receive": "Receive",
   "navbar": {
     "requests": "Requests",
     "about": "About Us"
   },
-  "receivePage": {
+  "makeRequestPage": {
+    "request": "Request",
     "heading": "Need something? Post your request here.",
     "title": "Title",
     "titlePlaceholder": "Request title",
     "description": "Description",
-    "descriptionPlaceholder": "Describe the request",
-    "category": "Category",
-    "area": "Area",
-    "areaPlaceholder": "Area",
+    "descriptionPlaceholder": "Please describe what you need",
+    "location": "General Location",
+    "locationPlaceholder": "e.g. Beirut",
     "submit": "Submit",
-    "contact": "Contact",
-    "contactPlaceholder": "Phone number e.g. 12 34 56 70",
+    "contact": "Contact Information",
+    "contactPlaceholder": "Phone number",
     "food": "Food",
     "clothing": "Clothing",
     "shelter": "Shelter",
@@ -37,7 +36,9 @@
     "all": "All",
     "other": "Other",
     "none": "None",
-    "selectCategory": "Select a category"
+    "requestType": "Type of Request",
+    "selectRequestType": "Select request type",
+    "disclaimer": "Please do not provide any personally identifiable information beyond what is strictly necessary for your request."
   },
   "aboutUsPage": {
     "heroTitle": "About Us",

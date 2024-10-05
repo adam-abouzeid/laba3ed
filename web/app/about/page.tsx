@@ -18,7 +18,7 @@ const AboutUs = () => {
       </section>
 
       {/* Website Purpose Section */}
-      <section className="py-12 px-4 lg:px-24 text-center">
+      <section className="py-12 px-4 text-center">
         <h2 className="text-3xl font-semibold mb-6">{t("whatWeDoTitle")}</h2>
         <p className="text-lg leading-relaxed max-w-3xl mx-auto">
           {t("whatWeDoDescription1")}
@@ -29,7 +29,7 @@ const AboutUs = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="bg-gray-100 py-12 px-4 lg:px-24">
+      <section className="bg-gray-100 py-12 px-4">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-6">{t("missionTitle")}</h2>
           <p className="text-lg leading-relaxed max-w-3xl mx-auto">
@@ -39,7 +39,7 @@ const AboutUs = () => {
       </section>
 
       {/* Money Donation Section */}
-      <section className="py-12 px-4 lg:px-24 text-center">
+      <section className="py-12 px-4 text-center">
         <h2 className="text-3xl font-semibold mb-6">{t("donateTitle")}</h2>
         <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-6">
           {t("donateDescription")}
