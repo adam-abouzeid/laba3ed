@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import { reportRequest } from "../actions";
 import { Button } from "@/components/ui/button";
-import { Need } from "@/interfaces/request.interface";
 import {
   Dialog,
   DialogContent,
@@ -25,22 +24,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
+import { Need } from "@prisma/client";
 
 const RequestCard = ({ request }: { request: Need }) => {
-  const t = useTranslations("RequestCard");
+  const t = useTranslations("requestCard");
   const [selectedReason, setSelectedReason] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [reportedRequests, setReportedRequests] = useState<number[]>([]);
 
-  // Load reported requests from localStorage when the component mounts
-  useEffect(() => {
-    const savedReports = JSON.parse(
-      localStorage.getItem("reportedRequests") || "[]"
-    );
-    setReportedRequests(savedReports);
-  }, []);
+  const [reportedRequests, setReportedRequests] = useState<number[]>(
+    JSON.parse(localStorage.getItem("reportedRequests") || "[]")
+  );
 
   // Check if the current request is already reported
   const isReported = reportedRequests.includes(request.id);

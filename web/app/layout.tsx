@@ -22,11 +22,14 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
 
+  console.log(GeistSans.variable);
+
   return (
-    <html lang={locale}>
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
-      >
+    <html
+      lang={locale}
+      className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+    >
+      <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <Toaster />

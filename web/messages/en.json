@@ -12,9 +12,9 @@
     "other": "Other",
     "none": "None"
   },
+  "receive": "Receive",
   "navbar": {
     "requests": "Requests",
-    "receive": "Receive",
     "about": "About Us"
   },
   "receivePage": {

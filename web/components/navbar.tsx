@@ -10,7 +10,7 @@ const Navbar = () => {
   // State to keep track of selected language
   const [language, setLanguage] = useState<string>("en");
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // State to toggle mobile menu
-  const t = useTranslations("Navbar");
+  const t = useTranslations("navbar");
 
   // Get the initial language from the "lang" cookie or default to English
   useEffect(() => {
@@ -70,9 +70,6 @@ const Navbar = () => {
               <Button>{t("requests")}</Button>
             </Link>
 
-            <Link href="/request">
-              <Button variant={"outline"}>{t("receive")}</Button>
-            </Link>
             <Link href="/about">
               <Button variant={"outline"}>{t("about")}</Button>
             </Link>

@@ -12,9 +12,9 @@
     "other": "أخرى",
     "none": "لا شيء"
   },
+  "receive": "اطلب",
   "navbar": {
     "requests": "الطلبات",
-    "receive": "اطلب",
     "about": "معلومات عنا"
   },
   "receivePage": {

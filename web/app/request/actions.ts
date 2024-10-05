@@ -19,7 +19,7 @@ const schema = z.object({
   area: z.string(),
 });
 
-export async function createRequest(formData) {
+export async function createRequest(formData: FormData) {
   // Validate form data
   const validatedFields = schema.safeParse({
     title: formData.get("title"),

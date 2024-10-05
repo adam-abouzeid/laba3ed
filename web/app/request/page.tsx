@@ -4,16 +4,18 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner"; // Import toast notification
 import { createRequest } from "./actions"; // Import your server action
 import { useTranslations } from "next-intl";
-const RecievePage = () => {
-  const t = useTranslations("ReceivePage");
-  const [isPending, startTransition] = useTransition();
-  const [error, setError] = useState();
 
-  const handleSubmit = async (event) => {
+const ReceivePage = () => {
+  const t = useTranslations("receivePage");
+  const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState<string>();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
 
-    const formData = new FormData(event.target);
+    const target = event.target as HTMLFormElement;
+    const formData = new FormData(target);
 
     startTransition(() => {
       createRequest(formData)
@@ -23,7 +25,7 @@ const RecievePage = () => {
             toast.error("Something went wrong!"); // Show error notification
           } else {
             toast.success("Request created successfully!"); // Show success notification
-            event.target.reset(); // Reset the form after success
+            target.reset(); // Reset the form after success
           }
         })
         .catch(() => {
@@ -144,4 +146,4 @@ const RecievePage = () => {
   );
 };
 
-export default RecievePage;
+export default ReceivePage;

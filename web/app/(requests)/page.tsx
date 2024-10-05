@@ -1,33 +1,48 @@
 import db from "@/lib/db";
 
+import { getTranslations } from "next-intl/server";
+import RequestCard from "../components/RequestCard";
+import { z } from "zod";
+
 export const metadata = {
   title: "Requests",
   description: "See all the requests for help",
 };
-const categories = [
-  "ALL",
-  "FOOD",
-  "CLOTHING",
-  "SHELTER",
-  "TRANSPORTATION",
-  "MEDICINE",
-  "OTHER",
-];
-import { getTranslations } from "next-intl/server";
-import RequestCard from "./components/RequestCard";
+
+const categories = {
+  ALL: "ALL",
+  FOOD: "FOOD",
+  CLOTHING: "CLOTHING",
+  SHELTER: "SHELTER",
+  TRANSPORTATION: "TRANSPORTATION",
+  MEDICINE: "MEDICINE",
+  OTHER: "OTHER",
+} as const;
+
 // Number of items per page
 const ITEMS_PER_PAGE = 6;
 
-const DonatePage = async ({ searchParams }) => {
-  const t = await getTranslations("RequestsPage");
-  let page = parseInt(searchParams?.page || "1", 10);
+const DonatePage = async ({
+  searchParams,
+}: {
+  searchParams?: Record<string, string | string[]> | undefined;
+}) => {
+  const t = await getTranslations("requestsPage");
 
-  const selectedCategory = categories.includes(searchParams?.category)
-    ? searchParams.category
-    : "ALL";
+  const parsedParams = z
+    .object({
+      page: z.string().default("10").transform(Number),
+      category: z.nativeEnum(categories).default("ALL"),
+    })
+    .parse(searchParams);
+
+  let page = parsedParams.page;
+  const selectedCategory = parsedParams.category;
+
   const totalRequests = await db.need.count({
     where: selectedCategory !== "ALL" ? { category: selectedCategory } : {},
   });
+
   const totalPages = Math.ceil(totalRequests / ITEMS_PER_PAGE);
 
   // Validate the page number: it should be at least 1 and at most totalPages
@@ -38,9 +53,11 @@ const DonatePage = async ({ searchParams }) => {
   }
 
   // Calculate the number of items to skip based on the current page
-  const skip = (page - 1) * ITEMS_PER_PAGE;
+  const skip = page > 1 ? (page - 1) * ITEMS_PER_PAGE : 0;
 
   // Optimize the database query based on the selected category and add pagination
+  console.log(skip, ITEMS_PER_PAGE);
+
   const requests = await db.need.findMany({
     where: selectedCategory !== "ALL" ? { category: selectedCategory } : {},
     skip,
@@ -69,9 +86,9 @@ const DonatePage = async ({ searchParams }) => {
             defaultValue={selectedCategory}
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           >
-            {categories.map((category) => (
+            {Object.values(categories).map((category) => (
               <option key={category} value={category}>
-                {t(category.charAt(0) + category.slice(1).toLowerCase())}
+                {t(category.toLowerCase())}
               </option>
             ))}
           </select>
@@ -84,15 +101,17 @@ const DonatePage = async ({ searchParams }) => {
         </form>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {requests.length > 0 ? (
-          requests.map((request) => (
+      {requests.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {requests.map((request) => (
             <RequestCard key={request.id} request={request} />
-          ))
-        ) : (
-          <p className="text-center text-gray-500">{t("none")}</p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center md:text-left text-muted-foreground">
+          {t("none")}
+        </p>
+      )}
 
       {/* Pagination Controls */}
       <div className="mt-8 flex justify-center space-x-4">
