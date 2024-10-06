@@ -23,7 +23,18 @@ const ReceivePage = () => {
   const t = useTranslations("makeRequestPage");
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string>();
-
+  const updateLocalStorage = (need: any, token: string) => {
+    const needs = JSON.parse(localStorage.getItem("needs") || "[]");
+    const newNeed = {
+      needId: need.id,
+      deletionToken: token,
+    };
+    localStorage.setItem("needs", JSON.stringify([...needs, newNeed]));
+    console.log(
+      "New needs",
+      JSON.parse(localStorage.getItem("needs") || "empty")
+    );
+  };
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
@@ -39,6 +50,7 @@ const ReceivePage = () => {
             toast.error("Something went wrong!"); // Show error notification
           } else {
             toast.success("Request created successfully!"); // Show success notification
+            updateLocalStorage(data.need, data.token);
             target.reset(); // Reset the form after success
           }
         })
