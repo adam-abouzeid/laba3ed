@@ -1,15 +1,18 @@
 {
-  "requestsPage": {
-    "heading": "See what people need & filter by category",
-    "filter": "Filter by category",
-    "filterButton": "Filter",
+  "categories": {
+    "all": "All",
     "food": "Food",
     "clothing": "Clothing",
     "shelter": "Shelter",
     "medicine": "Medicine",
     "transportation": "Transportation",
-    "all": "All",
-    "other": "Other",
+    "other": "Other"
+  },
+  "requestsPage": {
+    "heading": "See what people need & filter by category",
+    "filter": "Filter by category",
+    "filterButton": "Filter",
+
     "none": "None"
   },
   "navbar": {
@@ -62,6 +65,7 @@
       "spamScam": "I think the request is a form of spam/scam.",
       "fulfilledByOwner": "I am the owner of the request and the request has been fulfilled."
     },
+    "report": "report",
     "submitReport": "Submit Report"
   }
 }

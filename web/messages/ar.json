@@ -1,15 +1,17 @@
 {
-  "requestsPage": {
-    "heading": "شاهد ما يحتاجه الناس وقم بالتصفية حسب الفئة",
-    "filter": "تصفية حسب الفئة",
-    "filterButton": "تصفية",
+  "categories": {
+    "all": "الكل",
     "food": "طعام",
     "clothing": "ملابس",
     "shelter": "مأوى",
     "medicine": "دواء",
     "transportation": "نقل",
-    "all": "الكل",
-    "other": "أخرى",
+    "other": "أخرى"
+  },
+  "requestsPage": {
+    "heading": "شاهد ما يحتاجه الناس وقم بالتصفية حسب الفئة",
+    "filter": "تصفية حسب الفئة",
+    "filterButton": "تصفية",
     "none": "لا شيء"
   },
   "navbar": {
@@ -62,6 +64,7 @@
       "spamScam": ".أعتقد أن الطلب شكل من أشكال الاحتيال/البريد المزعج",
       "fulfilledByOwner": ".أنا مالك الطلب وتم تلبية الطلب"
     },
+    "report": "إبلاغ",
     "submitReport": "إرسال التقرير"
   }
 }

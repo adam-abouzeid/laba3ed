@@ -16,7 +16,7 @@ import { Button } from "./ui/button";
 import { GoSearch, GoX } from "react-icons/go";
 
 export default function Filter() {
-  const t = useTranslations("requestsPage");
+  const t = useTranslations("categories");
 
   const searchParams = useSearchParams();
 

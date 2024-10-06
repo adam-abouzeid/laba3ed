@@ -83,7 +83,7 @@ export default function ReportButton({ requestId }: { requestId: number }) {
         <DialogTrigger asChild>
           <Button variant={"outline"} className="gap-1.5">
             <GoAlert className="size-5 text-destructive" />
-            Report
+            {t("report")}
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[460px]">
