@@ -4,7 +4,7 @@ import { GoPlus } from "react-icons/go";
 import Link from "next/link";
 
 export default function RequestButton() {
-  const t = useTranslations();
+  const t = useTranslations("floatingButton");
 
   return (
     <Link

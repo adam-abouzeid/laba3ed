@@ -1,4 +1,7 @@
 {
+  "floatingButton": {
+    "request": "Request"
+  },
   "categories": {
     "all": "All",
     "food": "Food",
@@ -12,7 +15,6 @@
     "heading": "See what people need & filter by category",
     "filter": "Filter by category",
     "filterButton": "Filter",
-
     "none": "None"
   },
   "navbar": {
@@ -29,8 +31,8 @@
     "location": "General Location",
     "locationPlaceholder": "e.g. Beirut",
     "submit": "Submit",
-    "contact": "Contact Information",
-    "contactPlaceholder": "Phone number",
+    "contact": "Phone number",
+    "contactPlaceholder": "e.g. 70 123456",
     "food": "Food",
     "clothing": "Clothing",
     "shelter": "Shelter",
@@ -65,7 +67,7 @@
       "spamScam": "I think the request is a form of spam/scam.",
       "fulfilledByOwner": "I am the owner of the request and the request has been fulfilled."
     },
-    "report": "report",
+    "report": "Report",
     "submitReport": "Submit Report"
   }
 }

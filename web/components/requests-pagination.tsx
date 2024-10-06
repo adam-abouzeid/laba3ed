@@ -3,6 +3,46 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Button } from "./ui/button";
 
+const getPageNumbers = (currentPage: number, totalPages: number) => {
+  const pageNumbers = [];
+  const maxPagesToShow = 5;
+  const halfMaxPagesToShow = Math.floor(maxPagesToShow / 2);
+
+  if (totalPages <= maxPagesToShow) {
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+  } else {
+    if (currentPage <= halfMaxPagesToShow + 1) {
+      for (let i = 1; i <= maxPagesToShow - 1; i++) {
+        pageNumbers.push(i);
+      }
+      pageNumbers.push("...");
+      pageNumbers.push(totalPages);
+    } else if (currentPage > totalPages - halfMaxPagesToShow) {
+      pageNumbers.push(1);
+      pageNumbers.push("...");
+      for (let i = totalPages - maxPagesToShow + 2; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      pageNumbers.push(1);
+      pageNumbers.push("...");
+      for (
+        let i = currentPage - halfMaxPagesToShow + 1;
+        i <= currentPage + halfMaxPagesToShow - 1;
+        i++
+      ) {
+        pageNumbers.push(i);
+      }
+      pageNumbers.push("...");
+      pageNumbers.push(totalPages);
+    }
+  }
+
+  return pageNumbers;
+};
+
 const RequestsPagination = ({
   totalPages,
   currentPage,
@@ -10,56 +50,14 @@ const RequestsPagination = ({
   totalPages: number;
   currentPage: number;
 }) => {
-  const getPageNumbers = () => {
-    const pageNumbers = [];
-    const maxPagesToShow = 5;
-    const halfMaxPagesToShow = Math.floor(maxPagesToShow / 2);
-
-    if (totalPages <= maxPagesToShow) {
-      for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-      }
-    } else {
-      if (currentPage <= halfMaxPagesToShow + 1) {
-        for (let i = 1; i <= maxPagesToShow - 1; i++) {
-          pageNumbers.push(i);
-        }
-        pageNumbers.push("...");
-        pageNumbers.push(totalPages);
-      } else if (currentPage > totalPages - halfMaxPagesToShow) {
-        pageNumbers.push(1);
-        pageNumbers.push("...");
-        for (let i = totalPages - maxPagesToShow + 2; i <= totalPages; i++) {
-          pageNumbers.push(i);
-        }
-      } else {
-        pageNumbers.push(1);
-        pageNumbers.push("...");
-        for (
-          let i = currentPage - halfMaxPagesToShow + 1;
-          i <= currentPage + halfMaxPagesToShow - 1;
-          i++
-        ) {
-          pageNumbers.push(i);
-        }
-        pageNumbers.push("...");
-        pageNumbers.push(totalPages);
-      }
-    }
-
-    return pageNumbers;
-  };
-
-  const pageNumbers = getPageNumbers();
-
+  const pageNumbers = getPageNumbers(currentPage, totalPages);
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+
   const handlePageChange = (pageNumber: number) => {
     const params = new URLSearchParams(searchParams);
-
     params.set("page", String(pageNumber));
-
     router.push(`${pathname}?${params.toString()}`);
   };
 

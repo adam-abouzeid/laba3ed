@@ -8,6 +8,16 @@ import { Category } from "@prisma/client";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { GoAlert } from "react-icons/go";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 const ReceivePage = () => {
   const t = useTranslations("makeRequestPage");
@@ -40,7 +50,7 @@ const ReceivePage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-8 bg-white shadow-md rounded-lg">
+    <div className="max-w-md mx-auto md:p-8 md:shadow md:border md:rounded-lg">
       <h1 className="text-2xl font-semibold mb-6 text-center">
         {t("heading")}
       </h1>
@@ -49,39 +59,27 @@ const ReceivePage = () => {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1.5">
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("requestType")}
-          </label>
-          <select
-            name="category"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            required
-            defaultValue="" // Initial value is an empty string, which will not be valid for the form submission
-          >
-            <option value="" disabled>
-              {t("selectRequestType")}
-            </option>
-            {Object.values(Category).map((category) => (
-              <option key={category} value={category}>
-                {t(category.toLowerCase())}
-              </option>
-            ))}
-          </select>
+          <Label htmlFor="category">{t("requestType")}</Label>
+
+          <Select name="category" required>
+            <SelectTrigger id="category">
+              <SelectValue placeholder={t("selectRequestType")} />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(Category).map((category) => (
+                <SelectItem key={category} value={category}>
+                  {t(category.toLowerCase())}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
-        <div>
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("description")}
-          </label>
-          <textarea
+        <div className="space-y-1.5">
+          <Label htmlFor="description">{t("description")}</Label>
+          <Textarea
             name="description"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            id="description"
             placeholder={t("descriptionPlaceholder")}
             required
             maxLength={150}
@@ -89,31 +87,24 @@ const ReceivePage = () => {
         </div>
 
         <div className="space-y-1.5">
-          <label
-            htmlFor="area"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("location")}
-          </label>
-          <Input name="area" placeholder={t("locationPlaceholder")} required />
+          <Label htmlFor="area">{t("location")}</Label>
+          <Input
+            id="area"
+            name="area"
+            placeholder={t("locationPlaceholder")}
+            required
+          />
         </div>
 
         <div className="space-y-1.5">
-          <label
-            htmlFor=" "
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("contact")}
-          </label>
-          <div className="flex focus-within:ring-2 focus-within:ring-blue-500 border border-gray-300 rounded-md shadow-sm items-baseline">
-            <span className="sm:text-sm pl-2">+961</span>
-            <input
-              name="contact"
-              className="block w-full bg-transparent p-2 sm:text-sm outline-none"
-              placeholder={t("contactPlaceholder")}
-              required
-            />
-          </div>
+          <Label htmlFor="contact">{t("contact")}</Label>
+          <Input
+            id="contact"
+            name="contact"
+            type="tel"
+            placeholder={t("contactPlaceholder")}
+            required
+          />
         </div>
 
         <Alert>
@@ -123,15 +114,9 @@ const ReceivePage = () => {
           </AlertDescription>
         </Alert>
 
-        <button
-          type="submit"
-          disabled={isPending}
-          className={`w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${
-            isPending && "opacity-50 cursor-not-allowed"
-          }`}
-        >
+        <Button type="submit" disabled={isPending} className="w-full">
           {isPending ? "Submitting..." : t("submit")}
-        </button>
+        </Button>
       </form>
     </div>
   );

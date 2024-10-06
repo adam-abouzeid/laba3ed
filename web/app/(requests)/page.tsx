@@ -28,7 +28,7 @@ const ITEMS_PER_PAGE = 6;
 const schema = z.object({
   page: z
     .string()
-    .default("10")
+    .default("1")
     .transform((v) => parseInt(v))
     .refine((v) => v > 0),
   category: z.nativeEnum(categories).default("ALL"),

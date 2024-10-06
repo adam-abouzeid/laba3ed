@@ -1,11 +1,14 @@
 {
+  "floatingButton": {
+    "request": "طلب"
+  },
   "categories": {
     "all": "الكل",
     "food": "طعام",
     "clothing": "ملابس",
     "shelter": "مأوى",
     "medicine": "دواء",
-    "transportation": "نقل",
+    "transportation": "مواصلات",
     "other": "أخرى"
   },
   "requestsPage": {
@@ -23,24 +26,24 @@
     "title": "العنوان",
     "titlePlaceholder": "عنوان الطلب",
     "description": "الوصف",
-    "descriptionPlaceholder": "وصف الطلب",
+    "descriptionPlaceholder": "الرجاء شرح ما تحتاج إليه",
     "category": "الفئة",
     "location": "المنطقة",
-    "locationPlaceholder": "المنطقة",
+    "locationPlaceholder": "مثلًا: بيروت",
     "submit": "إرسال",
-    "contact": "التواصل",
-    "contactPlaceholder": "رقم الهاتف e.g. 12 34 56 70",
+    "contact": "رقم الهاتف",
+    "contactPlaceholder": "70 123456",
     "food": "طعام",
     "clothing": "ملابس",
     "shelter": "مأوى",
     "medicine": "دواء",
-    "transportation": "نقل",
+    "transportation": "مواصلات",
     "all": "الكل",
     "other": "أخرى",
     "none": "لا شيء",
     "requestType": "نوع الطلب",
     "selectRequestType": "اختر نوع الطلب",
-    "disclaimer": "يرجى عدم تقديم أي معلومات تعريف شخصية تتجاوز ما هو ضروري للغاية لطلبك."
+    "disclaimer": "يُرجى عدم تقديم أي معلومات شخصية تتجاوز ما هو ضروري لطلبك."
   },
   "aboutUsPage": {
     "heroTitle": "من نحن",

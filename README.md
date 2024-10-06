@@ -32,7 +32,7 @@ todo
 3. Run the following command to start the PostgreSQL database:
 
    ```
-   docker-compose -f docker-compose.local.yml up -d
+   docker-compose -f docker-compose.local.yaml up -d
    ```
 
 4. Navigate to the `web` directory:
@@ -51,7 +51,7 @@ todo
    Create a `.env` file and add the following:
 
    ```
-   DATABASE_URL="postgresql://postgres:my-secret-pw@localhost:5432/laba3ed?pgbouncer=true"
+   DATABASE_URL="postgresql://postgres:my-secret-pw@localhost:5432/laba3ed"
    ```
 
 7. Start the development server:

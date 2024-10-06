@@ -53,7 +53,7 @@ export default function Filter() {
     const params = new URLSearchParams(searchParams);
     params.delete("q");
     router.replace(`${pathname}?${params.toString()}`);
-  });
+  }, [pathname, router, search, searchParams]);
 
   return (
     <div className="mb-6 flex gap-2">
