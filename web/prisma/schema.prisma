@@ -29,6 +29,8 @@ model Need {
   area        String   @default("Lebanon")
   contact     String
   reports     Report[] @relation("NeedReports")
+  deletionToken RequestDeletionToken?
+  
   createdAt   DateTime @default(now())
 }
 
@@ -47,4 +49,13 @@ model Report {
   needId    Int
   createdAt DateTime @default(now())
   need      Need     @relation("NeedReports", fields: [needId], references: [id], onDelete: Cascade)
+}
+
+
+model RequestDeletionToken {
+  id        Int      @id @default(autoincrement())
+  need      Need     @relation(fields: [needId], references: [id], onDelete: Cascade)
+  needId    Int    @unique
+  token     String   @unique
+  createdAt DateTime @default(now())
 }

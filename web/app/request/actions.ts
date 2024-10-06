@@ -1,8 +1,9 @@
 "use server";
-
+import crypto from "crypto";
 import { z } from "zod";
 import db from "../../lib/db";
 import { Category } from "@prisma/client";
+import { cookies } from "next/headers";
 
 // Define schema for validation
 const schema = z.object({
@@ -36,8 +37,14 @@ export async function createRequest(formData: FormData) {
         area: validatedFields.data.area,
       },
     });
+    const deletionToken = await db.requestDeletionToken.create({
+      data: {
+        needId: newNeed.id,
+        token: crypto.randomBytes(16).toString("hex"),
+      },
+    });
 
-    return { success: true, need: newNeed };
+    return { success: true, need: newNeed, token: deletionToken.token };
   } catch (error) {
     console.error(error);
     return {
