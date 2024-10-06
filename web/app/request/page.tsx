@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner"; // Import toast notification
 import { createRequest } from "./actions"; // Import your server action
 import { useTranslations } from "next-intl";
-import { Category } from "@prisma/client";
+import { Category, Need } from "@prisma/client";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { GoAlert } from "react-icons/go";
 import { Input } from "@/components/ui/input";
@@ -23,17 +23,13 @@ const ReceivePage = () => {
   const t = useTranslations("makeRequestPage");
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string>();
-  const updateLocalStorage = (need: any, token: string) => {
+  const updateLocalStorage = (need: Need, token: string) => {
     const needs = JSON.parse(localStorage.getItem("needs") || "[]");
     const newNeed = {
       needId: need.id,
       deletionToken: token,
     };
     localStorage.setItem("needs", JSON.stringify([...needs, newNeed]));
-    console.log(
-      "New needs",
-      JSON.parse(localStorage.getItem("needs") || "empty")
-    );
   };
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

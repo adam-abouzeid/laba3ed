@@ -23,8 +23,12 @@ const DeleteRequest = ({ requestId }: { requestId: number }) => {
 
   const handleDelete = async () => {
     const storedNeeds = JSON.parse(localStorage.getItem("needs") || "[]");
+    type StoredNeed = {
+      needId: number;
+      deletionToken: string;
+    };
     const foundNeed = storedNeeds.find(
-      (need: any) => need.needId === requestId
+      (need: StoredNeed) => need.needId === requestId
     );
 
     if (!foundNeed) {
@@ -41,7 +45,7 @@ const DeleteRequest = ({ requestId }: { requestId: number }) => {
       toast.success("Request deleted successfully");
 
       const updatedNeeds = storedNeeds.filter(
-        (need: any) => need.needId !== requestId
+        (need: StoredNeed) => need.needId !== requestId
       );
       localStorage.setItem("needs", JSON.stringify(updatedNeeds));
     } catch (error) {
