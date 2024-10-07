@@ -53,9 +53,26 @@
     "whatWeDoDescription2": "In addition, we have created a platform for money donations, allowing contributors to help financially through Wish Money donations that are directed to various causes.",
     "missionTitle": "Our Mission",
     "missionDescription": "We believe in the power of community and the importance of extending a helping hand to those in need. Our mission is to create a space where people can offer assistance directly to those who need it most, whether through essential goods or financial contributions. We strive to bridge the gap between those who can give and those in need of help.",
-    "donateTitle": "Support Us with Financial Donations",
-    "donateDescription": "You can support our mission by making a direct money donation to our Wish Money account. Your contributions will help us continue providing essential services and purchase goods that will be distributed to those in need. Every donation counts, no matter the size.",
-    "donateButton": "Donate Now +961 81 997 027"
+    "acknowledgementTitle": "Acknowledgement",
+    "acknowledgementDescription": " We are grateful to everyone who contributed to make Laba3ed possible. A special thanks to our contributors and partners for their support and collaboration.",
+    "partners": {
+      "1": {
+        "name": "Adam Abou Zeid",
+        "role": "Project owner"
+      },
+      "2": {
+        "name": "Zaker team",
+        "role": "Contributors and maintainers"
+      },
+      "3": {
+        "name": "Lara Wehbe",
+        "role": "Marketing and community outreach"
+      },
+      "4": {
+        "name": "Wissam FAWAZ",
+        "role": "technical consultant and advisor"
+      }
+    }
   },
   "requestCard": {
     "reportTitle": "Report Request",

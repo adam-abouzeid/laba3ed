@@ -49,13 +49,14 @@ const Navbar = () => {
       <nav className="bg-[#dfdddd] top-0 left-0 w-full z-50 shadow-sm">
         <div className="flex justify-between items-center px-4 h-[64px]">
           {/* Logo */}
-          <Image
-            src="/images/logo.jpeg"
-            width={64}
-            height={64}
-            alt="Lebanese Flag"
-            className="cursor-pointer"
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo.jpeg"
+              width={64}
+              height={64}
+              alt="Lebanese Flag"
+            />
+          </Link>
 
           {/* Hamburger Menu Icon for Mobile */}
           <div className="lg:hidden">
