@@ -9,7 +9,8 @@
     "shelter": "Shelter",
     "medicine": "Medicine",
     "transportation": "Transportation",
-    "other": "Other"
+    "other": "Other",
+    "search": "Search..."
   },
   "requestsPage": {
     "heading": "See what people need & filter by category",
