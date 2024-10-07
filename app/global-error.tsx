@@ -1,12 +1,18 @@
 "use client";
+
+import * as Sentry from "@sentry/nextjs";
+import Error from "next/error";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-// Error boundaries must be Client Components
+export default function GlobalError({ error }: { error: Error }) {
+  useEffect(() => {
+    Sentry.captureException(error);
+  }, [error]);
 
-export default function GlobalError() {
   const router = useRouter();
+
   return (
-    // global-error must include html and body tags
     <html>
       <body>
         <h2>Something went wrong!</h2>
@@ -16,7 +22,7 @@ export default function GlobalError() {
           }}
         >
           Go Home
-        </button>
+        </button>{" "}
       </body>
     </html>
   );
