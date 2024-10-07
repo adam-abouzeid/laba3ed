@@ -4,7 +4,7 @@ First off, thank you for considering contributing to the Laba3ed. It's people li
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Laba3ed Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [project_email@example.com].
+This project and everyone participating in it is governed by the [Laba3ed Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [support@laba3ed.org](mailto:support@laba3ed.org).
 
 ## How Can I Contribute?
 

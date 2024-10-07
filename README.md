@@ -77,9 +77,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-[Your Name] - [your.email@example.com]
-
-Project Link: [https://github.com/your-username/your-app](https://github.com/your-username/your-app)
+[support@laba3ed.org](mailto:support@laba3ed.org)
 
 ## Acknowledgments
 

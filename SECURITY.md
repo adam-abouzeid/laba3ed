@@ -4,7 +4,7 @@ We take the security and integrity of Laba3ed very seriously. If you have found 
 
 ### Reporting a Vulnerability
 
-For vulnerabilities that impact the confidentiality, integrity, and availability of Laba3ed services, please send your disclosure via [email](example@gmail.com). Include as much detail as possible to ensure reproducibility. At a minimum, vulnerability disclosures should include:
+For vulnerabilities that impact the confidentiality, integrity, and availability of Laba3ed services, please send your disclosure via [support@laba3ed.org](mailto:support@laba3ed.org). Include as much detail as possible to ensure reproducibility. At a minimum, vulnerability disclosures should include:
 
 - Vulnerability Description
 - Proof of Concept
