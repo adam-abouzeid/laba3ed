@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: my-secret-pw
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_db_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres_db_data:

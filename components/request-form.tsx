@@ -7,7 +7,7 @@ const RequestForm = () => {
         Need something? We got your back, make a request!
       </h1>
 
-      <form action={createRequest} className="space-y-4">
+      <form action={void createRequest} className="space-y-4">
         <div>
           <label
             htmlFor="title"

@@ -1,46 +1,51 @@
 {
-  "RequestsPage": {
+  "floatingButton": {
+    "request": "Request"
+  },
+  "categories": {
+    "all": "All",
+    "food": "Food",
+    "clothing": "Clothing",
+    "shelter": "Shelter",
+    "medicine": "Medicine",
+    "transportation": "Transportation",
+    "other": "Other"
+  },
+  "requestsPage": {
     "heading": "See what people need & filter by category",
     "filter": "Filter by category",
-    "filter-button": "Filter",
-
-    "Food": "Food",
-    "Clothing": "Clothing",
-    "Shelter": "Shelter",
-    "Medicine": "Medicine",
-    "Transportation": "Transportation",
-    "All": "All",
-    "Other": "Other",
-    "None": "None"
+    "filterButton": "Filter",
+    "none": "None"
   },
-  "Navbar": {
-    "Requests": "Requests",
-    "Receive": "Receive",
-    "About": "About Us"
+  "navbar": {
+    "requests": "Requests",
+    "about": "About Us"
   },
-  "ReceivePage": {
+  "makeRequestPage": {
+    "request": "Request",
     "heading": "Need something? Post your request here.",
     "title": "Title",
-    "title-placeholder": "Request title",
+    "titlePlaceholder": "Request title",
     "description": "Description",
-    "description-placeholder": "Describe the request",
-    "category": "Category",
-    "area": "Area",
-    "area-placeholder": "Area",
+    "descriptionPlaceholder": "Please describe what you need",
+    "location": "General Location",
+    "locationPlaceholder": "e.g. Beirut",
     "submit": "Submit",
-    "contact": "Contact",
-    "contact-placeholder": "Phone number e.g. 12 34 56 70",
-    "Food": "Food",
-    "Clothing": "Clothing",
-    "Shelter": "Shelter",
-    "Medicine": "Medicine",
-    "Transportation": "Transportation",
-    "All": "All",
-    "Other": "Other",
-    "None": "None",
-    "Select a category": "Select a category"
+    "contact": "Phone number",
+    "contactPlaceholder": "e.g. 70 123456",
+    "food": "Food",
+    "clothing": "Clothing",
+    "shelter": "Shelter",
+    "medicine": "Medicine",
+    "transportation": "Transportation",
+    "all": "All",
+    "other": "Other",
+    "none": "None",
+    "requestType": "Type of Request",
+    "selectRequestType": "Select request type",
+    "disclaimer": "Please do not provide any personally identifiable information beyond what is strictly necessary for your request."
   },
-  "AboutUsPage": {
+  "aboutUsPage": {
     "heroTitle": "About Us",
     "heroSubtitle": "Our mission is to help those in need.",
     "whatWeDoTitle": "What We Do",
@@ -52,7 +57,7 @@
     "donateDescription": "You can support our mission by making a direct money donation to our Wish Money account. Your contributions will help us continue providing essential services and purchase goods that will be distributed to those in need. Every donation counts, no matter the size.",
     "donateButton": "Donate Now +961 81 997 027"
   },
-  "RequestCard": {
+  "requestCard": {
     "reportTitle": "Report Request",
     "reportDescription": "Report a request and select a reason. Submit when you are done.",
     "selectReasonPlaceholder": "Select a Reason",
@@ -62,6 +67,10 @@
       "spamScam": "I think the request is a form of spam/scam.",
       "fulfilledByOwner": "I am the owner of the request and the request has been fulfilled."
     },
+    "report": "Report",
     "submitReport": "Submit Report"
+  },
+  "singleRequestPage": {
+    "similarRequests": "Similar Requests"
   }
 }

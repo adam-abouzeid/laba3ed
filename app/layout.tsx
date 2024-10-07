@@ -1,21 +1,12 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import type { Metadata } from "next";
 import Navbar from "@/components/navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: "La Ba3ed",
@@ -30,15 +21,21 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
+
+  console.log(GeistSans.variable);
+
   return (
-    <html lang={locale}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang={locale}
+      className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+    >
+      <body className="flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <Toaster />
-          {children}
+          <div className="max-w-2xl py-6 px-4 md:px-0 mx-auto container">
+            {children}
+          </div>
           <Footer />
         </NextIntlClientProvider>
       </body>

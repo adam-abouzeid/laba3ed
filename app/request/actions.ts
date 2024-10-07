@@ -1,28 +1,20 @@
 "use server";
-
+import crypto from "crypto";
 import { z } from "zod";
 import db from "../../lib/db";
+import { Category } from "@prisma/client";
 
 // Define schema for validation
 const schema = z.object({
-  title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   contact: z.string(),
-  category: z.enum([
-    "FOOD",
-    "CLOTHING",
-    "SHELTER",
-    "TRANSPORTATION",
-    "MEDICINE",
-    "OTHER",
-  ]),
+  category: z.nativeEnum(Category),
   area: z.string(),
 });
 
-export async function createRequest(formData) {
+export async function createRequest(formData: FormData) {
   // Validate form data
   const validatedFields = schema.safeParse({
-    title: formData.get("title"),
     description: formData.get("description"),
     contact: formData.get("contact"),
     category: formData.get("category"),
@@ -38,15 +30,20 @@ export async function createRequest(formData) {
   try {
     const newNeed = await db.need.create({
       data: {
-        title: validatedFields.data.title,
         description: validatedFields.data.description,
         category: validatedFields.data.category,
         contact: validatedFields.data.contact,
         area: validatedFields.data.area,
       },
     });
+    const deletionToken = await db.requestDeletionToken.create({
+      data: {
+        needId: newNeed.id,
+        token: crypto.randomBytes(16).toString("hex"),
+      },
+    });
 
-    return { success: true, need: newNeed };
+    return { success: true, need: newNeed, token: deletionToken.token };
   } catch (error) {
     console.error(error);
     return {

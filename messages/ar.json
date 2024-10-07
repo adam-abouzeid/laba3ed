@@ -1,46 +1,51 @@
 {
-  "RequestsPage": {
+  "floatingButton": {
+    "request": "طلب"
+  },
+  "categories": {
+    "all": "الكل",
+    "food": "طعام",
+    "clothing": "ملابس",
+    "shelter": "مأوى",
+    "medicine": "دواء",
+    "transportation": "مواصلات",
+    "other": "أخرى"
+  },
+  "requestsPage": {
     "heading": "شاهد ما يحتاجه الناس وقم بالتصفية حسب الفئة",
     "filter": "تصفية حسب الفئة",
-    "filter-button": "تصفية",
-
-    "Food": "طعام",
-    "Clothing": "ملابس",
-    "Shelter": "مأوى",
-    "Medicine": "دواء",
-    "Transportation": "نقل",
-    "All": "الكل",
-    "Other": "أخرى",
-    "None": "لا شيء"
+    "filterButton": "تصفية",
+    "none": "لا شيء"
   },
-  "Navbar": {
-    "Requests": "الطلبات",
-    "Receive": "اطلب",
-    "About": "معلومات عنا"
+  "navbar": {
+    "requests": "الطلبات",
+    "about": "معلومات عنا"
   },
-  "ReceivePage": {
+  "makeRequestPage": {
     "heading": ".محتاج شي؟ اعرض طلبك هنا",
     "title": "العنوان",
-    "title-placeholder": "عنوان الطلب",
+    "titlePlaceholder": "عنوان الطلب",
     "description": "الوصف",
-    "description-placeholder": "وصف الطلب",
+    "descriptionPlaceholder": "الرجاء شرح ما تحتاج إليه",
     "category": "الفئة",
-    "area": "المنطقة",
-    "area-placeholder": "المنطقة",
+    "location": "المنطقة",
+    "locationPlaceholder": "مثلًا: بيروت",
     "submit": "إرسال",
-    "contact": "التواصل",
-    "contact-placeholder": "رقم الهاتف e.g. 12 34 56 70",
-    "Food": "طعام",
-    "Clothing": "ملابس",
-    "Shelter": "مأوى",
-    "Medicine": "دواء",
-    "Transportation": "نقل",
-    "All": "الكل",
-    "Other": "أخرى",
-    "None": "لا شيء",
-    "Select a category": "اختر الفئة"
+    "contact": "رقم الهاتف",
+    "contactPlaceholder": "70 123456",
+    "food": "طعام",
+    "clothing": "ملابس",
+    "shelter": "مأوى",
+    "medicine": "دواء",
+    "transportation": "مواصلات",
+    "all": "الكل",
+    "other": "أخرى",
+    "none": "لا شيء",
+    "requestType": "نوع الطلب",
+    "selectRequestType": "اختر نوع الطلب",
+    "disclaimer": "يُرجى عدم تقديم أي معلومات شخصية تتجاوز ما هو ضروري لطلبك."
   },
-  "AboutUsPage": {
+  "aboutUsPage": {
     "heroTitle": "من نحن",
     "heroSubtitle": "مهمتنا هي مساعدة المحتاجين.",
     "whatWeDoTitle": "ماذا نفعل",
@@ -52,7 +57,7 @@
     "donateDescription": "يمكنك دعم مهمتنا من خلال تقديم تبرع مالي مباشر إلى حساب Wish Money الخاص بنا. ستساعد مساهماتك في مواصلة تقديم الخدمات الأساسية وشراء السلع التي سيتم توزيعها على المحتاجين. كل تبرع مهم، مهما كان حجمه.",
     "donateButton": "+تبرع الآن961 81 997 027"
   },
-  "RequestCard": {
+  "requestCard": {
     "reportTitle": "الإبلاغ عن الطلب",
     "reportDescription": "أبلغ عن طلب واختر السبب. قم بالتقديم عند الانتهاء.",
     "selectReasonPlaceholder": "اختر سببًا",
@@ -62,6 +67,10 @@
       "spamScam": ".أعتقد أن الطلب شكل من أشكال الاحتيال/البريد المزعج",
       "fulfilledByOwner": ".أنا مالك الطلب وتم تلبية الطلب"
     },
+    "report": "إبلاغ",
     "submitReport": "إرسال التقرير"
+  },
+  "singleRequestPage": {
+    "similarRequests": "طلبات مماثلة"
   }
 }

@@ -3,13 +3,7 @@ import { cookies } from "next/headers";
 
 export default getRequestConfig(async () => {
   const cookieStore = cookies();
-  let locale = "en"; // Default locale
-
-  // Check if "lang" cookie exists and set the locale
-  const langCookie = cookieStore.get("lang");
-  if (langCookie?.value) {
-    locale = langCookie.value;
-  }
+  const locale = cookieStore.get("lang")?.value || "ar";
 
   try {
     // Dynamically import locale messages based on the locale
