@@ -69,5 +69,8 @@
     },
     "report": "Report",
     "submitReport": "Submit Report"
+  },
+  "singleRequestPage": {
+    "similarRequests": "Similar Requests"
   }
 }

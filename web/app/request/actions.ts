@@ -3,7 +3,6 @@ import crypto from "crypto";
 import { z } from "zod";
 import db from "../../lib/db";
 import { Category } from "@prisma/client";
-import { cookies } from "next/headers";
 
 // Define schema for validation
 const schema = z.object({

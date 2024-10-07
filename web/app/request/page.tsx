@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
 
 const ReceivePage = () => {
   const t = useTranslations("makeRequestPage");
@@ -31,6 +32,7 @@ const ReceivePage = () => {
     };
     localStorage.setItem("needs", JSON.stringify([...needs, newNeed]));
   };
+  const router = useRouter();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
@@ -44,11 +46,13 @@ const ReceivePage = () => {
           if (data?.errors) {
             setError("Something went wrong!"); // Handle error case
             toast.error("Something went wrong!"); // Show error notification
-          } else {
-            toast.success("Request created successfully!"); // Show success notification
-            updateLocalStorage(data.need, data.token);
-            target.reset(); // Reset the form after success
+
+            return;
           }
+          router.push(`/${data.need.id}`);
+          toast.success("Request created successfully!"); // Show success notification
+          updateLocalStorage(data.need, data.token);
+          target.reset(); // Reset the form after success
         })
         .catch(() => {
           setError("Something went wrong!");

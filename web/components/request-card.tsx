@@ -1,38 +1,41 @@
 import { Need } from "@prisma/client";
-import { GoLocation } from "react-icons/go";
-import ReportButton from "./report-button";
 import { Badge } from "@/components/ui/badge";
 import RequestCardTime from "./request-card-time";
 import { useTranslations } from "next-intl";
-import DeleteRequest from "./request-delete";
+import { HiPhone } from "react-icons/hi";
+import { IoLocationSharp } from "react-icons/io5";
+import Link from "next/link";
 
 const RequestCard = ({ request }: { request: Need }) => {
   const t = useTranslations("categories");
 
   return (
-    <div className="bg-background shadow rounded-lg border transition-shadow duration-200 flex flex-col justify-between">
+    <Link
+      href={`/${request.id}`}
+      className="bg-background shadow rounded-lg border transition-shadow duration-200 flex flex-col justify-between"
+    >
       <div className="p-3">
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between">
           <Badge variant={"outline"}>{t(request.category.toLowerCase())}</Badge>
 
-          <p className="flex items-center gap-2">
-            <GoLocation className="inline-block shrink-0 mr-1" />
-            {request.area}
-            <DeleteRequest requestId={request.id} />
-          </p>
+          <RequestCardTime createdAt={request.createdAt} />
         </div>
 
-        <p className="leading-7 mb-2">{request.description}</p>
-        <a href={`tel:${request.contact}`} className="font-semibold">
-          {request.contact}
-        </a>
+        <p className="leading-7 mt-4">{request.description}</p>
       </div>
 
-      <div className="flex justify-between items-center bg-secondary p-3">
-        <RequestCardTime createdAt={request.createdAt} />
-        <ReportButton requestId={request.id} />
+      <div className="bg-secondary p-3 space-y-1.5">
+        <div className="gap-1.5 flex items-center">
+          <HiPhone className="shrink-0" />
+          {request.contact}
+        </div>
+
+        <div className="gap-1.5 flex items-center">
+          <IoLocationSharp className="shrink-0" />
+          {request.area}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

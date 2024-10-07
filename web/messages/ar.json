@@ -69,5 +69,8 @@
     },
     "report": "إبلاغ",
     "submitReport": "إرسال التقرير"
+  },
+  "singleRequestPage": {
+    "similarRequests": "طلبات مماثلة"
   }
 }

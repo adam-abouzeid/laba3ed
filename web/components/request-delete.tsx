@@ -1,32 +1,29 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { toast } from "sonner"; // Import toast notifications
 import { deleteRequest } from "./action";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
+
+type StoredNeed = {
+  needId: number;
+  deletionToken: string;
+};
 
 const DeleteRequest = ({ requestId }: { requestId: number }) => {
-  const [isDeletable, setIsDeletable] = useState(false);
+  const storedNeeds = JSON.parse(localStorage.getItem("needs") || "[]");
   const [isDeleting, setIsDeleting] = useState(false);
+  const router = useRouter();
 
-  useEffect(() => {
-    const storedNeeds = JSON.parse(localStorage.getItem("needs") || "[]");
-
-    const foundNeed = storedNeeds.find(
-      (need: any) => need.needId === requestId
-    );
-
-    if (foundNeed) {
-      setIsDeletable(true);
-    }
-  }, [requestId]);
+  const isDeletable = !!storedNeeds.find(
+    (need: StoredNeed) => need.needId === requestId
+  );
 
   const handleDelete = async () => {
     const storedNeeds = JSON.parse(localStorage.getItem("needs") || "[]");
-    type StoredNeed = {
-      needId: number;
-      deletionToken: string;
-    };
+
     const foundNeed = storedNeeds.find(
       (need: StoredNeed) => need.needId === requestId
     );
@@ -39,11 +36,11 @@ const DeleteRequest = ({ requestId }: { requestId: number }) => {
     const deletionToken = foundNeed.deletionToken;
 
     setIsDeleting(true);
-
     try {
       await deleteRequest(requestId, deletionToken);
       toast.success("Request deleted successfully");
 
+      router.replace("/");
       const updatedNeeds = storedNeeds.filter(
         (need: StoredNeed) => need.needId !== requestId
       );
@@ -61,13 +58,9 @@ const DeleteRequest = ({ requestId }: { requestId: number }) => {
   }
 
   return (
-    <button
-      onClick={handleDelete}
-      className="text-red-500 hover:text-red-700"
-      disabled={isDeleting}
-    >
-      {isDeleting ? "Deleting..." : <FaTrashAlt />}{" "}
-    </button>
+    <Button onClick={handleDelete} variant="destructive" disabled={isDeleting}>
+      {isDeleting ? "Deleting..." : <FaTrashAlt />}
+    </Button>
   );
 };
 
