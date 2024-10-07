@@ -58,19 +58,19 @@
     "partners": {
       "1": {
         "name": "Adam Abou Zeid",
-        "role": "Project owner"
+        "role": "Project Owner"
       },
       "2": {
-        "name": "Zaker team",
-        "role": "Contributors and maintainers"
+        "name": "Zaker Team",
+        "role": "Contributors & Maintainers"
       },
       "3": {
         "name": "Lara Wehbe",
-        "role": "Marketing and community outreach"
+        "role": "Marketing & Community Outreach"
       },
       "4": {
-        "name": "Wissam FAWAZ",
-        "role": "technical consultant and advisor"
+        "name": "Wissam Fawaz",
+        "role": "Technical Consultant & Advisor"
       }
     }
   },
