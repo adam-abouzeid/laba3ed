@@ -74,7 +74,7 @@ const Navbar = () => {
               <Button
                 className={cn(
                   "w-full",
-                  pathname === "/" ? "text-primary" : "text-muted-foreground"
+                  pathname === "/" ? "text-foreground" : "text-muted-foreground"
                 )}
                 variant={"link"}
               >
@@ -87,7 +87,7 @@ const Navbar = () => {
                 className={cn(
                   "w-full",
                   pathname === "/about"
-                    ? "text-primary"
+                    ? "text-foreground"
                     : "text-muted-foreground"
                 )}
                 variant={"link"}
@@ -116,7 +116,7 @@ const Navbar = () => {
             <Button
               className={cn(
                 "w-full",
-                pathname === "/" ? "text-primary" : "text-muted-foreground"
+                pathname === "/" ? "text-foreground" : "text-muted-foreground"
               )}
             >
               {t("requests")}
@@ -127,7 +127,9 @@ const Navbar = () => {
             <Button
               className={cn(
                 "w-full",
-                pathname === "/about" ? "text-primary" : "text-muted-foreground"
+                pathname === "/about"
+                  ? "text-foreground"
+                  : "text-muted-foreground"
               )}
               variant={"outline"}
             >

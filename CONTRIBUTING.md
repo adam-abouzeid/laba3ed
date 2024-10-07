@@ -37,9 +37,8 @@ Unsure where to begin contributing to Laba3ed? You can start by looking through 
 - Fill in the required template
 - Do not include issue numbers in the PR title
 - Include screenshots and animated GIFs in your pull request whenever possible.
-- Follow the JavaScript/React styleguides.
+- Follow the Typescript/React styleguides.
 - Include thoughtfully-worded, well-structured tests.
-- Document new code based on the Documentation Styleguide
 - End all files with a newline
 
 ## Styleguides
@@ -47,27 +46,13 @@ Unsure where to begin contributing to Laba3ed? You can start by looking through 
 ### Git Commit Messages
 
 - Use the present tense ("Add feature" not "Added feature")
-- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 - Limit the first line to 72 characters or less
 - Reference issues and pull requests liberally after the first line
 
-### JavaScript Styleguide
-
-All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com/).
-
-### React/JSX Styleguide
+### React/TSX Styleguide
 
 - Use functional components and hooks instead of class components
-- Use PropTypes for type checking
 - Use meaningful component and variable names
-
-### Documentation Styleguide
-
-- Use [Markdown](https://daringfireball.net/projects/markdown/).
-- Reference methods and classes in markdown with the custom `{}` notation:
-  - Reference classes with `{ClassName}`
-  - Reference instance methods with `{ClassName::methodName}`
-  - Reference class methods with `{ClassName.methodName}`
 
 ## Additional Notes
 
@@ -79,5 +64,8 @@ This section lists the labels we use to help us track and manage issues and pull
 - `enhancement` - Issues that are feature requests.
 - `documentation` - Issues or pull requests related to documentation.
 - `good first issue` - Good for newcomers.
+- `testing` - Issues or pull requests related to testing.
+- `discussion`: Open-ended discussions that may not result in a code change.
+- `refactor`: Refactoring existing code for better readability or performance.
 
 Thank you for contributing to Laba3ed!

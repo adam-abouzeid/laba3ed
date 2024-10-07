@@ -52,7 +52,7 @@ export default async function Page({
               <h1 className="text-2xl font-bold">{need.category}</h1>
               <RequestCardTime createdAt={need.createdAt} />
             </div>
-            <p className="leading-7">{need.description}</p>
+            <p className="leading-7 whitespace-pre-wrap">{need.description}</p>
             <p className="">
               <HiPhone className="inline-block mr-1" />
               {need.contact}
