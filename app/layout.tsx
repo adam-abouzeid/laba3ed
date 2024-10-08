@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/navbar";
 import { Toaster } from "sonner";
-import Footer from "@/components/footer";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { GeistSans } from "geist/font/sans";
@@ -22,8 +21,6 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
 
-  console.log(GeistSans.variable);
-
   return (
     <html
       lang={locale}
@@ -36,7 +33,6 @@ export default async function RootLayout({
           <div className="max-w-2xl py-6 px-4 md:px-0 mx-auto container">
             {children}
           </div>
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

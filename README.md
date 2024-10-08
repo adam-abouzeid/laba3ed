@@ -2,11 +2,12 @@
 
 ## Overview
 
-todo
+Laba3ed connects individuals who need assistance with those who are willing to help. We provide a simple and transparent way to post and browse requests for essential items such as food, clothing, shelter, transportation, and medicine. Donors can view these requests and offer support directly to the individuals who need it.
 
 ## Features
 
-- todo
+- **Request Creation**: Individuals can post requests for essential items such as food, clothing, shelter, transportation, and medicine.
+- **Browse Requests**: Donors can view requests and offer support directly to the individuals who need it.
 
 ## Getting Started
 
@@ -35,33 +36,23 @@ todo
    docker-compose -f docker-compose.local.yaml up -d
    ```
 
-4. Navigate to the `web` directory:
-
-   ```
-   cd web
-   ```
-
-5. Install dependencies:
+4. Install dependencies:
 
    ```
    npm install
    ```
 
-6. Set up environment variables:
+5. Set up environment variables:
    Create a `.env` file and add the following:
 
    ```
    DATABASE_URL="postgresql://postgres:my-secret-pw@localhost:5432/laba3ed"
    ```
 
-7. Start the development server:
+6. Start the development server:
    ```
    npm run dev
    ```
-
-## Usage
-
-[Provide instructions on how to use the app, including screenshots if possible]
 
 ## Contributing
 
@@ -71,6 +62,10 @@ We welcome contributions from the community. Please read our [CONTRIBUTING.md](C
 
 This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
+## Security
+
+Please read our [SECURITY.md](SECURITY.md) file for guidelines on reporting security vulnerabilities.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -78,7 +73,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 [support@laba3ed.org](mailto:support@laba3ed.org)
-
-## Acknowledgments
-
-- [List any libraries, frameworks, or individuals you'd like to acknowledge]

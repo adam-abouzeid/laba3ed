@@ -78,7 +78,7 @@ export default function Filter() {
       <form className="flex-1 flex" onSubmit={handleSearch}>
         <div className="relative w-full">
           <Input
-            placeholder="Search..."
+            placeholder={t("search")}
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             className="rounded-r-none peer"

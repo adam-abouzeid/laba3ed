@@ -54,19 +54,19 @@ const DonatePage = async ({
           OR: [
             {
               area: {
-                startsWith: search,
+                contains: search,
                 mode: "insensitive",
               },
             },
             {
               description: {
-                startsWith: search,
+                contains: search,
                 mode: "insensitive",
               },
             },
             {
               contact: {
-                startsWith: search,
+                contains: search,
                 mode: "insensitive",
               },
             },
