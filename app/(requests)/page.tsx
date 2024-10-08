@@ -102,7 +102,7 @@ const DonatePage = async ({
   // Get the total count of requests to calculate the total number of pages
 
   return (
-    <div className="">
+    <div className="mb-28 lg:mb-0">
       <h1 className="text-3xl font-bold text-center mb-8">{t("heading")}</h1>
 
       <Filter />

@@ -10,6 +10,7 @@ const schema = z.object({
   contact: z.string(),
   category: z.nativeEnum(Category),
   area: z.string(),
+  recaptchaToken: z.string(),
 });
 
 export async function createRequest(formData: FormData) {
@@ -19,6 +20,7 @@ export async function createRequest(formData: FormData) {
     contact: formData.get("contact"),
     category: formData.get("category"),
     area: formData.get("area"),
+    recaptchaToken: formData.get("recaptchaToken"),
   });
 
   // If validation fails, return an error
@@ -28,6 +30,27 @@ export async function createRequest(formData: FormData) {
     };
   }
   try {
+    // validate token
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.RECAPTCHA_SECRET_KEY || "",
+          response: validatedFields.data.recaptchaToken,
+        }).toString(),
+      }
+    );
+
+    const recaptchaData = await recaptchaResponse.json();
+
+    if (!recaptchaData.success) {
+      return { errors: { message: "Failed to validate recaptcha" } };
+    }
+
     const newNeed = await db.need.create({
       data: {
         description: validatedFields.data.description,
