@@ -1,6 +1,6 @@
 # Contributing to Laba3ed
 
-First off, thank you for considering contributing to the Laba3ed. It's people like you that make this project such a great tool for helping those in need during times of crisis.
+First off, thank you for considering contributing to the Laba3ed. It's people like you that make this project such a great tool for helping those in need.
 
 ## Code of Conduct
 
@@ -25,13 +25,6 @@ This section guides you through submitting an enhancement suggestion, including 
 - Provide specific examples to demonstrate the steps or point out the part of Laba3ed where the suggestion is related to.
 - Explain why this enhancement would be useful to most Laba3ed users.
 
-### Your First Code Contribution
-
-Unsure where to begin contributing to Laba3ed? You can start by looking through these `beginner` and `help-wanted` issues:
-
-- Beginner issues - issues which should only require a few lines of code, and a test or two.
-- Help wanted issues - issues which should be a bit more involved than `beginner` issues.
-
 ### Pull Requests
 
 - Fill in the required template
@@ -53,6 +46,38 @@ Unsure where to begin contributing to Laba3ed? You can start by looking through 
 
 - Use functional components and hooks instead of class components
 - Use meaningful component and variable names
+- Use `const` and `let` instead of `var`
+
+### Your First Code Contribution
+
+1. **Fork the Repository**: Start by forking the repository to your GitHub account.
+
+2. **Clone the Repository**: Clone the forked repository to your local machine.
+
+   ```sh
+   git clone https://github.com/adam-abouzeid/laba3ed.git
+   cd laba3ed
+   ```
+
+3. **Create a Branch**: Create a new branch from main.
+
+   ```sh
+    git checkout -b your-branch-name
+   ```
+
+4. **Make Changes**: Make your changes to the codebase.
+5. **Commit Changes**: Commit your changes to the branch.
+
+   ```sh
+   git add .
+   git commit -m "Your commit message"
+   ```
+
+6. **Push Changes**: Push your changes to the branch.
+   ```sh
+    git push origin your-branch-name
+   ```
+7. **Submit your Pull Request**: Submit a pull request from your branch to the `main` branch of the Laba3ed repository.
 
 ## Additional Notes
 
@@ -60,12 +85,15 @@ Unsure where to begin contributing to Laba3ed? You can start by looking through 
 
 This section lists the labels we use to help us track and manage issues and pull requests.
 
-- `bug` - Issues that are bugs.
-- `enhancement` - Issues that are feature requests.
-- `documentation` - Issues or pull requests related to documentation.
-- `good first issue` - Good for newcomers.
-- `testing` - Issues or pull requests related to testing.
-- `discussion`: Open-ended discussions that may not result in a code change.
-- `refactor`: Refactoring existing code for better readability or performance.
+- `bug` - Something isn't working
+- `documentation` - Improvements or additions to documentation.
+- `enhancement` - New feature or request
+- `duplicate` - This issue or pull request already exists
+- `good first issue` - Good for newcomers
+- `help wanted` - Extra attention is needed
+- `invalid` - This doesn't seem right
+- `wontfix` - This will not be worked on
+- `refactor` - Refactor existing code
+- `testing` - Add missing tests
 
 Thank you for contributing to Laba3ed!

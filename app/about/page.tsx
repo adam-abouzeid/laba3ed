@@ -24,9 +24,6 @@ const AboutUs = () => {
         <p className="text-lg leading-relaxed max-w-3xl mx-auto">
           {t("whatWeDoDescription1")}
         </p>
-        <p className="text-lg leading-relaxed max-w-3xl mx-auto mt-4">
-          {t("whatWeDoDescription2")}
-        </p>
       </section>
 
       {/* Mission Statement */}
