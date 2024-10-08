@@ -6,6 +6,7 @@ import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import RecaptchaProvider from "@/components/recaptcha-provider";
 
 export const metadata: Metadata = {
   title: "La Ba3ed",

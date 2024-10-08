@@ -19,9 +19,13 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ReceivePage = () => {
   const t = useTranslations("makeRequestPage");
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string>();
   const updateLocalStorage = (need: Need, token: string) => {
@@ -39,6 +43,14 @@ const ReceivePage = () => {
 
     const target = event.target as HTMLFormElement;
     const formData = new FormData(target);
+
+    let token = "";
+
+    if (executeRecaptcha) {
+      token = await executeRecaptcha();
+    }
+
+    formData.append("recaptchaToken", token);
 
     startTransition(() => {
       createRequest(formData)
@@ -125,6 +137,11 @@ const ReceivePage = () => {
             {t("disclaimer")}
           </AlertDescription>
         </Alert>
+
+        {/* <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+        /> */}
 
         <Button type="submit" disabled={isPending} className="w-full">
           {isPending ? "Submitting..." : t("submit")}
