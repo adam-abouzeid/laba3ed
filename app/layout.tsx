@@ -25,6 +25,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
       className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
     >
       <body className="flex flex-col">
