@@ -6,12 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // getLocale returns the language from the "lang" cookie or default to Arabic
-export const getLocaleFromCookie = (): string => {
-  const cookies = document.cookie
+export const getLocaleFromCookie = (cookies: string): string => {
+  const langCookie = cookies
     .split("; ")
     .find((row) => row.startsWith("lang="));
 
-  const locale = cookies?.split("=")[1] || "ar";
-  return locale
+  return langCookie?.split("=")[1] || "ar";
 };
 

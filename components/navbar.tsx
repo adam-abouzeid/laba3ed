@@ -16,7 +16,7 @@ const Navbar = () => {
 
   // Get the initial language from the "lang" cookie or default to Arabic
   useEffect(() => {
-    const lang = getLocaleFromCookie()
+    const lang = getLocaleFromCookie(document.cookie)
     setLanguage(lang);
   }, []);
 
