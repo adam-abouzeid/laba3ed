@@ -5,11 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const getLocale = () => {
+// getLocale returns the language from the "lang" cookie or default to Arabic
+export const getLocaleFromCookie = (): string => {
   const cookies = document.cookie
     .split("; ")
     .find((row) => row.startsWith("lang="));
 
-  return cookies?.split("=")[1] || "ar";
+  const locale = cookies?.split("=")[1] || "ar";
+  return locale
 };
 

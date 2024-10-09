@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
 import { HiMenu, HiX } from "react-icons/hi"; // Importing icons for the menu toggle
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn, getLocaleFromCookie } from "@/lib/utils";
 
 const Navbar = () => {
   // State to keep track of selected language
@@ -14,16 +14,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // State to toggle mobile menu
   const t = useTranslations("navbar");
 
-  // Get the initial language from the "lang" cookie or default to English
+  // Get the initial language from the "lang" cookie or default to Arabic
   useEffect(() => {
-    const cookies = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("lang="));
-
-    if (cookies) {
-      const lang = cookies.split("=")[1];
-      setLanguage(lang || "en");
-    }
+    const lang = getLocaleFromCookie()
+    setLanguage(lang);
   }, []);
 
   // Function to change language and update the cookie
