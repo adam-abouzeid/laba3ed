@@ -48,8 +48,14 @@ Laba3ed connects individuals who need assistance with those who are willing to h
    ```
    DATABASE_URL="postgresql://postgres:my-secret-pw@localhost:5432/laba3ed"
    ```
+6. Apply the database migration:
+If it is your first time running the installation locally, run the following to setup the database schemas:
 
-6. Start the development server:
+```
+npx prisma migrate dev
+```
+
+7. Start the development server:
    ```
    npm run dev
    ```
