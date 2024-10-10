@@ -45,7 +45,7 @@ const AboutUs = () => {
         <div className="mb-4">
           <Link
             href="https://www.linkedin.com/in/adamabzd/"
-            className="underline inline-block font-semibold text-lg mr-2"
+            className="underline inline-block font-semibold text-lg me-2"
           >
             {t("partners.1.name")}
           </Link>
@@ -55,7 +55,7 @@ const AboutUs = () => {
         <div className="mb-4">
           <Link
             href="https://zaker.io/"
-            className="underline inline-block font-semibold text-lg mr-2"
+            className="underline inline-block font-semibold text-lg me-2"
           >
             {t("partners.2.name")}
           </Link>
@@ -65,7 +65,7 @@ const AboutUs = () => {
         <div className="mb-4">
           <Link
             href="https://www.linkedin.com/in/lara-wehbe/"
-            className="underline inline-block font-semibold text-lg mr-2"
+            className="underline inline-block font-semibold text-lg me-2"
           >
             {t("partners.3.name")}
           </Link>
@@ -75,7 +75,7 @@ const AboutUs = () => {
         <div className="mb-4">
           <Link
             href="https://www.linkedin.com/in/wissam-fawaz-6b440839/"
-            className="underline inline-block font-semibold text-lg mr-2"
+            className="underline inline-block font-semibold text-lg me-2"
           >
             {t("partners.4.name")}
           </Link>

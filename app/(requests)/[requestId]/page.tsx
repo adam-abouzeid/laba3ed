@@ -21,6 +21,7 @@ export default async function Page({
     },
   });
   const t = await getTranslations("singleRequestPage");
+  const tCategory = await getTranslations("categories");
 
   if (!need) {
     return <div>not found</div>;
@@ -49,16 +50,18 @@ export default async function Page({
 
           <div className="space-y-3 flex-1">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-bold">{need.category}</h1>
+              <h1 className="text-2xl font-bold">
+                {tCategory(need.category.toLowerCase())}
+              </h1>
               <RequestCardTime createdAt={need.createdAt} />
             </div>
             <p className="leading-7 whitespace-pre-wrap">{need.description}</p>
             <p className="">
-              <HiPhone className="inline-block mr-1" />
+              <HiPhone className="inline-block me-1" />
               {need.contact}
             </p>
             <p className="flex items-center mb-2">
-              <GoLocation className="inline-block mr-1" />
+              <GoLocation className="inline-block me-1" />
               {need.area}
             </p>
             <div className="flex justify-end gap-3">
