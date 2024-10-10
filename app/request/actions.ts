@@ -13,6 +13,26 @@ const schema = z.object({
   recaptchaToken: z.string(),
 });
 
+// validateRecaptcha validates recaptcha token
+async function validateRecaptcha(recaptchaToken: string): Promise<boolean> {
+  const recaptchaResponse = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY || "",
+        response: recaptchaToken,
+      }).toString(),
+    }
+  );
+
+  const recaptchaData = await recaptchaResponse.json();
+  return recaptchaData.success
+}
+
 export async function createRequest(formData: FormData) {
   // Validate form data
   const validatedFields = schema.safeParse({
@@ -30,25 +50,13 @@ export async function createRequest(formData: FormData) {
     };
   }
   try {
-    // validate token
-    const recaptchaResponse = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          secret: process.env.RECAPTCHA_SECRET_KEY || "",
-          response: validatedFields.data.recaptchaToken,
-        }).toString(),
+
+    const isDevelopmentEnv = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+    if (!isDevelopmentEnv) {
+      // validate recaptcha token if in production environment
+      if (await validateRecaptcha(validatedFields.data.recaptchaToken)) {
+        return { errors: { message: "Failed to validate recaptcha" } };
       }
-    );
-
-    const recaptchaData = await recaptchaResponse.json();
-
-    if (!recaptchaData.success) {
-      return { errors: { message: "Failed to validate recaptcha" } };
     }
 
     const newNeed = await db.need.create({
