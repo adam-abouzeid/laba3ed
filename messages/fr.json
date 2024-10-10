@@ -1,0 +1,93 @@
+{
+    "floatingButton": {
+        "request": "Demande"
+    },
+    "categories": {
+        "all": "Tous",
+        "food": "Nourriture",
+        "clothing": "Vêtements",
+        "shelter": "Abri",
+        "medicine": "Médicaments",
+        "transportation": "Transport",
+        "other": "Autre",
+        "search": "Rechercher..."
+    },
+    "requestsPage": {
+        "heading": "Voir ce dont les gens ont besoin et filtrer par catégorie",
+        "filter": "Filtrer par catégorie",
+        "filterButton": "Filtrer",
+        "none": "Aucun"
+    },
+    "navbar": {
+        "requests": "Demandes",
+        "about": "À propos de nous"
+    },
+    "makeRequestPage": {
+        "request": "Demande",
+        "heading": "Besoin de quelque chose ? Publiez votre demande ici.",
+        "title": "Titre",
+        "titlePlaceholder": "Titre de la demande",
+        "description": "Description",
+        "descriptionPlaceholder": "Veuillez décrire ce dont vous avez besoin",
+        "location": "Localisation générale",
+        "locationPlaceholder": "ex. Beyrouth",
+        "submit": "Soumettre",
+        "contact": "Numéro de téléphone",
+        "contactPlaceholder": "ex. 70 123456",
+        "food": "Nourriture",
+        "clothing": "Vêtements",
+        "shelter": "Abri",
+        "medicine": "Médicaments",
+        "transportation": "Transport",
+        "all": "Tous",
+        "other": "Autre",
+        "none": "Aucun",
+        "requestType": "Type de demande",
+        "selectRequestType": "Sélectionner le type de demande",
+        "disclaimer": "Veuillez ne fournir aucune information personnellement identifiable au-delà de ce qui est strictement nécessaire pour votre demande."
+    },
+    "aboutUsPage": {
+        "heroTitle": "À propos de nous",
+        "heroSubtitle": "Notre mission est d'aider ceux qui en ont besoin.",
+        "whatWeDoTitle": "Ce que nous faisons",
+        "whatWeDoDescription1": "Notre plateforme connecte les personnes ayant besoin d'aide avec celles prêtes à les soutenir. Nous offrons une manière simple et transparente de publier et de consulter des demandes pour des articles essentiels tels que la nourriture, les vêtements, les abris, le transport et les médicaments. Les donateurs peuvent consulter ces demandes et offrir directement leur soutien aux personnes dans le besoin.",
+        "missionTitle": "Notre mission",
+        "missionDescription": "Nous croyons au pouvoir de la communauté et à l'importance de tendre la main à ceux qui en ont besoin. Notre mission est de créer un espace où les gens peuvent offrir leur aide directement à ceux qui en ont le plus besoin, que ce soit par des biens essentiels ou des contributions financières. Nous nous efforçons de combler l'écart entre ceux qui peuvent donner et ceux qui ont besoin d'aide.",
+        "acknowledgementTitle": "Remerciements",
+        "acknowledgementDescription": "Nous sommes reconnaissants à tous ceux qui ont contribué à rendre Laba3ed possible. Un grand merci à nos contributeurs et partenaires pour leur soutien et leur collaboration.",
+        "partners": {
+            "1": {
+                "name": "Adam Abou Zeid",
+                "role": "Propriétaire du projet"
+            },
+            "2": {
+                "name": "Équipe Zaker",
+                "role": "Contributeurs & Mainteneurs"
+            },
+            "3": {
+                "name": "Lara Wehbe",
+                "role": "Marketing & Sensibilisation communautaire"
+            },
+            "4": {
+                "name": "Wissam Fawaz",
+                "role": "Consultant technique & Conseiller"
+            }
+        }
+    },
+    "requestCard": {
+        "reportTitle": "Signaler la demande",
+        "reportDescription": "Signalez une demande et sélectionnez une raison. Soumettez lorsque vous avez terminé.",
+        "selectReasonPlaceholder": "Sélectionner une raison",
+        "reasons": {
+            "title": "Raisons",
+            "fulfilledByLister": "J'ai contacté l'annonceur et la demande a été satisfaite.",
+            "spamScam": "Je pense que la demande est une forme de spam/arnaque.",
+            "fulfilledByOwner": "Je suis le propriétaire de la demande et elle a été satisfaite."
+        },
+        "report": "Signaler",
+        "submitReport": "Soumettre le rapport"
+    },
+    "singleRequestPage": {
+        "similarRequests": "Demandes similaires"
+    }
+}

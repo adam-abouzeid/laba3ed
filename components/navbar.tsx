@@ -98,6 +98,7 @@ const Navbar = () => {
               className="p-1 border rounded"
             >
               <option value="en">English</option>
+              <option value="fr">Français</option>
               <option value="ar">العربية</option>
             </select>
           </div>
@@ -139,6 +140,7 @@ const Navbar = () => {
             className="p-1 border rounded w-full"
           >
             <option value="en">English</option>
+            <option value="fr">Français</option>
             <option value="ar">العربية</option>
           </select>
         </div>
